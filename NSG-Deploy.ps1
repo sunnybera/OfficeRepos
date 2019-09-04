@@ -1,10 +1,10 @@
-$user = "sougatad@cogcis.onmicrosoft.com"
-$token = "4dprm4bynboufznnx74jtmsuhskik6yhdpvpj5hucm2oslthkkqq"
-$organization = "SougataD"
-$project = "SAP-Automaton"
-$repoId = "SAP-Automaton"
+$user = "sunnyb@cogcis.onmicrosoft.com"
+$token = "3dvqcn7yfoanm6xmjs7njln7tdemgkb4uybaag4fcizkkziyqhfa"
+$organization = "SunnyB0779"
+$project = "SunBi"
+$repoId = "SunBi"
 
-$csvfilepath = "Scripts/AddEditNSG.csv"
+$csvfilepath = "AddEditNSG.csv"
 $downloadpath = "c:/repo/AddEditNSG.csv"
 mkdir "c:/repo" -Force
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $user,$token)))
