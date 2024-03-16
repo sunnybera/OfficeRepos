@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appName": {
+      "value": "aznpdlsafa002"
+    },
+    "storageAccountName": {
+      "value": "aznpdlssta001"
+
+    },
+    "hostingPlanName": {
+      "value": "aznpdlsasp002"
+    },
+    "appname": { "value": "Function App" },
+    "envname": { "value": "APS NonProd" },
+    "envtype": { "value": "Dev" },
+    "tenanttype": { "value": "DLS" },
+    "assetname": { "value": "npdlsafa001" },
+    "version": { "value": "1.0.0" },
+    "objectid": { "value": "" },
+    "businessunit": { "value": "ITECH" },
+    "maintwindow": { "value": "\"{\"stop\":null,\"days\":null,\"start\":null}\"" },
+    "resourcegrp": { "value": "np-dls-rg-003" }
+  }
+}

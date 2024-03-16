@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "South Central US"
+    },
+    "storageAccountName": {
+      "value": "aznpdlssta001"
+    },
+    "appname": { "value": "Datalake Storage" },
+    "envname": { "value": "APS NonProd" },
+    "envtype": { "value": "Dev" },
+    "tenanttype": { "value": "DLS" },
+    "assetname": { "value": "aznpdlssta001" },
+    "version": { "value": "1.0.0" },
+    "objectid": { "value": "" },
+    "businessunit": { "value": "ITECH" },
+    "maintwindow": { "value": "\"{\"stop\":null,\"days\":null,\"start\":null}\"" },
+    "resourcegrp": { "value": "np-dls-rg-003" }
+  }
+}

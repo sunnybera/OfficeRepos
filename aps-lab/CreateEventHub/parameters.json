@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "name": {
+        "value": "az-dls-ens-001"
+      },
+        "location": {
+            "value": "westus2"
+        },
+        "skuName": {
+            "value": "Standard"
+        },
+        "skuTier": {
+            "value": "Standard"
+        },
+        "skuCapacity": {
+            "value": "3"
+        },
+        "isAutoInflateEnabled": {
+            "value": "true"
+        },
+        "maximumThroughputUnits": {
+            "value": "3"
+        },
+        "zoneRedundant": {
+            "value": false
+        }
+    }
+}

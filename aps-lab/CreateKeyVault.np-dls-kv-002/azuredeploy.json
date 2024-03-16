@@ -1,0 +1,85 @@
+﻿{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vaults_np_dls_kv_003_name": {
+            "defaultValue": "np-dls-kv-002",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.KeyVault/vaults",
+            "apiVersion": "2016-10-01",
+            "name": "[parameters('vaults_np_dls_kv_003_name')]",
+            "location": "northcentralus",
+            "tags": {
+                "appname": "Key Vault",
+                "businessunit": "ITECH",
+                "envname": "APS NonProd",
+                "envtype": "Dev",
+                "maintwindow": "\"{\"stop\":null,\"days\":null,\"start\":null}\"",
+                "resourcegrp": "np-dls-rg-003",
+                "tenanttype": "DLS",
+                "version": "1.0.0",
+                "assetname": "np-dls-kv-001"
+            },
+            "properties": {
+                "sku": {
+                    "family": "A",
+                    "name": "Standard"
+                },
+                "tenantId": "b72c46a0-a269-4c0f-8e93-c736da98a9e4",
+                "accessPolicies": [
+                    {
+                        "tenantId": "b72c46a0-a269-4c0f-8e93-c736da98a9e4",
+                        "objectId": "0a8d6fc2-b5cf-42df-981e-9ade3c79ea14",
+                        "permissions": {
+                            "keys": [
+                                "Get",
+                                "List",
+                                "Update",
+                                "Create",
+                                "Import",
+                                "Delete",
+                                "Recover",
+                                "Backup",
+                                "Restore"
+                            ],
+                            "secrets": [
+                                "Get",
+                                "List",
+                                "Set",
+                                "Delete",
+                                "Recover",
+                                "Backup",
+                                "Restore"
+                            ],
+                          "certificates": [
+                            "Get",
+                            "List",
+                            "Update",
+                            "Create",
+                            "Import",
+                            "Delete",
+                            "Recover",
+                            "Backup",
+                            "Restore",
+                            "ManageContacts",
+                            "ManageIssuers",
+                            "GetIssuers",
+                            "ListIssuers",
+                            "SetIssuers",
+                            "DeleteIssuers"
+                          ]
+                        }
+                    }
+                ],
+                "enabledForDeployment": true,
+                "enabledForDiskEncryption": true,
+                "enabledForTemplateDeployment": true
+            }
+        }
+    ]
+}

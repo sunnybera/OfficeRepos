@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "value": "aznpdlsadf002"
+    },
+    "location": {
+      "value": "southcentralus"
+    },
+    "apiVersion": {
+      "value": "2018-06-01"
+    },
+    "appname": { "value": "Data Factory" },
+    "envname": { "value": "APS NonProd" },
+    "envtype": { "value": "Dev" },
+    "tenanttype": { "value": "DLS" },
+    "assetname": { "value": "npdlsadf001" },
+    "version": { "value": "1.0.0" },
+    "objectid": { "value": "" },
+    "businessunit": { "value": "ITECH" },
+    "maintwindow": { "value": "\"{\"stop\":null,\"days\":null,\"start\":null}\"" },
+    "resourcegrp": { "value": "np-dls-rg-003" }
+  }
+}

@@ -1,0 +1,66 @@
+
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    "rgName": {
+      "type": "string"
+    },
+    "rgLocation": {
+      "type": "string"
+    },
+    "appname": {
+      "type": "string"
+    },
+    "envname": {
+      "type": "string"
+    },
+    "assetname": {
+      "type": "string"
+    },
+    "envtype": {
+      "type": "string"
+    },
+    "tenanttype": {
+      "type": "string"
+    },
+    "objectid": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "businessunit": {
+      "type": "string"
+    },
+    "maintwindow": {
+      "type": "string"
+    },
+    "resourcegrp": {
+      "type": "string"
+    }
+  },
+    "variables": {},
+    "resources": [
+      {
+        "type": "Microsoft.Resources/resourceGroups",
+        "apiVersion": "2018-05-01",
+        "location": "[parameters('rgLocation')]",
+        "name": "[parameters('rgName')]",
+        "properties": {},
+        "tags": {
+            "appname": "[parameters('appname')]",
+            "assetname": "[parameters('assetname')]",
+            "businessunit": "[parameters('businessunit')]",
+            "envname": "[parameters('envname')]",
+            "envtype": "[parameters('envtype')]",
+            "maintwindow": "\"{\"stop\":null,\"days\":null,\"start\":null}\"",
+            "objectid": "[parameters('objectid')]",
+            "resourcegrp": "[parameters('resourcegrp')]",
+            "tenanttype": "[parameters('tenanttype')]",
+            "version": "[parameters('version')]"
+          }
+       }
+    ],
+    "outputs": {}
+}

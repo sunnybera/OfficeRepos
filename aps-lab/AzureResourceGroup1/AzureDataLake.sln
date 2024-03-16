@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "apsdatalake_nonprod", "AzureResourceGroup1\apsdatalake_nonprod.deployproj", "{C14BEC28-8F88-4472-9620-583A68E2B14A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C14BEC28-8F88-4472-9620-583A68E2B14A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C14BEC28-8F88-4472-9620-583A68E2B14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C14BEC28-8F88-4472-9620-583A68E2B14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C14BEC28-8F88-4472-9620-583A68E2B14A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5CF368E-3115-4DA8-A84C-C428255841BE}
+	EndGlobalSection
+EndGlobal

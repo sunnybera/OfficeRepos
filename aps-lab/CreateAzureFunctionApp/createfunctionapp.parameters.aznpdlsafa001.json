@@ -1,0 +1,58 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    "subscriptionId": {
+      "value": "5ab66322-398c-4751-b098-225402bdf7a3"
+    },
+    "name": {
+      "value": "aznpdlsafa002"
+    },
+    "location": {
+      "value": "South Central US"
+    },
+    "hostingEnvironment": {
+      "value": "Dev"
+    },
+    "hostingPlanName": {
+      "value": "aznpdlsasp001"
+    },
+    "serverFarmResourceGroup": {
+      "value": "np-dls-rg-003"
+    },
+    "alwaysOn": {
+      "value": false
+    },
+    "storageAccountName": {
+      "value": "aznpdlssta001"
+    },
+    "linuxFxVersion": {
+      "value": "DOCKER|mcr.microsoft.com/azure-functions/python:2.0-python3.6-appservice"
+    },
+    "sku": {
+      "value": "Dynamic"
+    },
+    "skuCode": {
+      "value": "Y1"
+    },
+    "workerSize": {
+      "value": "0"
+    },
+    "workerSizeId": {
+      "value": "0"
+    },
+    "numberOfWorkers": {
+      "value": "1"
+    },
+    "appname": { "value": "Function App" },
+    "envname": { "value": "APS NonProd" },
+    "envtype": { "value": "Dev" },
+    "tenanttype": { "value": "DLS" },
+    "assetname": { "value": "npdlsafa001" },
+    "version": { "value": "1.0.0" },
+    "objectid": { "value": "" },
+    "businessunit": { "value": "ITECH" },
+    "maintwindow": { "value": "\"{\"stop\":null,\"days\":null,\"start\":null}\"" },
+    "resourcegrp": { "value": "np-dls-rg-003" }
+  }
+}

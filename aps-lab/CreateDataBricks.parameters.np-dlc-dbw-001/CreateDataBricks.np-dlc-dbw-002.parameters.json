@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "workspaceName": {
+      "value": "np-dlc-dbw-001"
+    },
+    "customVirtualNetworkId": {
+      "value": "/subscriptions/5ab66322-398c-4751-b098-225402bdf7a3/resourceGroups/np-dln-rg-001/providers/Microsoft.Network/virtualNetworks/np-dlc-vnet-001"
+    },
+    "customPrivateSubnetName": {
+      "value": "np-dlc-snet-001"
+    },
+    "customPublicSubnetName": {
+      "value": "np-dlc-snet-002"
+    },
+    "resourcegrp": {
+      "value": "np-dlc-rg-002"
+    },
+    "managedResourceGroupName": {
+      "value": "np-dlc-rg-004"
+    },
+    "assetname": {
+      "value": "np-dlc-dbw-001"
+    },
+    "pricingTier": {
+      "value": "trial"
+    },
+    "envname": {
+      "value": "APS NonProd"
+    },
+    "envtype": {
+      "value": "Dev"
+    }
+  }
+}
+
+  

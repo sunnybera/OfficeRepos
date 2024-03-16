@@ -1,0 +1,19 @@
+ 
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "workspaceName": {
+      "value": "DataEngg-WorkSpace"
+    },
+    "customVirtualNetworkId": {
+      "value": "/subscriptions/5ab66322-398c-4751-b098-225402bdf7a3/resourceGroups/np-dln-rg-001/providers/Microsoft.Network/virtualNetworks/np-dlc-vnet-001"
+    },
+    "managedResourceGroupName": {
+      "value": "np-dlc-rg-003"
+    },
+    "nsgName": {
+      "value": "np-dlc-nsg-001"
+    }
+  }
+}

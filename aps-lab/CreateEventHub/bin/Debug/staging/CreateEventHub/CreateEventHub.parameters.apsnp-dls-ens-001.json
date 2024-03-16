@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "value": "az-dls-ens-001"
+    },
+    "location": {
+      "value": "westus2"
+    },
+    "skuName": {
+      "value": "Standard"
+    },
+    "skuTier": {
+      "value": "Standard"
+    },
+    "skuCapacity": {
+      "value": "3"
+    },
+    "isAutoInflateEnabled": {
+      "value": "true"
+    },
+    "maximumThroughputUnits": {
+      "value": "3"
+    },
+    "zoneRedundant": {
+      "value": false
+    },
+    "appname": { "value": "Logging" },
+    "envname": { "value": "APS NonProd" },
+    "envtype": { "value": "Dev" },
+    "tenanttype": { "value": "Hub" },
+    "assetname": { "value": "np-dls-ens-001" },
+    "version": { "value": "1.0.0" },
+    "objectid": { "value": "" },
+    "businessunit": { "value": "ITECH" },
+    "maintwindow": { "value": "\"{\"stop\":null,\"days\":null,\"start\":null}\"" },
+    "resourcegrp": { "value": "np-dls-rg-002" }
+    }
+  }

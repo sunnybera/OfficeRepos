@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vnetName": {
+      "value": "np-dlc-vnet-001"
+    },
+    "vnetRG": {
+      "value": "np-dlc-001"
+    },
+    "vnetId": {
+      "value": "/subscriptions/66d0ef16-e3f3-4b72-916d-19095b455950/resourceGroups/np-dlc-001/providers/Microsoft.Network/virtualNetworks/np-dlc-vnet-001"
+    },
+    "publicSubnetName": {
+      "value": "np-dlc-vnet-002-10.102.248.0"
+    },
+    "publicSubnetCIDR": {
+      "value": "10.102.248.0/23"
+    },
+    "privateSubnetName": {
+      "value": "np-dlc-vnet-002-10.102.250.0"
+    },
+    "privateSubnetCIDR": {
+      "value": "10.102.250.0/23"
+    },
+    "workspaceName": {
+      "value": "np-cmn-dtb-002"
+    },
+    "tier": {
+      "value": "trial"
+    },
+    "location": {
+      "value": "eastus2"
+    },
+    "managedResourceGroupName": {
+      "value": "np-dlc-003"
+    },
+    "nsgName": {
+      "value": "np-dlc-nsg-001"
+    }
+  }
+}

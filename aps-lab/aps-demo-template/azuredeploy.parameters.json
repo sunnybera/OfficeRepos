@@ -1,0 +1,19 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageName": {
+      "value": "npdlssta003"
+    },
+    "storageAccountType": {
+      "value": "Standard_LRS"
+    },
+    "appname": { "value": "Storage" },
+    "envname": { "value": "APS Prod" },
+    "envtype": { "value": "Prod" },
+    "tenanttype": { "value": "CommonSvcs" },
+    "assetname": { "value": "pdcmnsta003" },
+    "version": { "value": "1.0.0" },
+    "objectid": { "value": "" }
+  }
+}

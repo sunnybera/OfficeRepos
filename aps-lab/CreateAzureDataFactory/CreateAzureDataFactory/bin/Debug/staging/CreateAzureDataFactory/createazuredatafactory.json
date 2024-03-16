@@ -1,0 +1,94 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "defaultValue": "npdlsadf001",
+      "type": "String"
+    },
+    "location": {
+      "defaultValue": "East US2",
+      "type": "String"
+    },
+    "apiVersion": {
+      "defaultValue": "2018-06-01",
+      "type": "String"
+    },
+    "maintwindow": {
+      "type": "string"
+    },
+    "envname": {
+      "type": "string",
+      "defaultValue": "APS Prod",
+      "allowedValues": [
+        "APS Prod",
+        "APS NonProd",
+        "APS Dev"
+      ]
+    },
+    "envtype": {
+      "type": "string",
+      "defaultValue": "Prod",
+      "allowedValues": [
+        "Dev",
+        "Test",
+        "QA",
+        "PreProd",
+        "Prod",
+        "Standby",
+        "Training",
+        "ProcessControl",
+        "ProdSupport",
+        "Unknown",
+        "DR"
+      ]
+    },
+    "tenanttype": {
+      "type": "string"
+    },
+    "assetname": {
+      "type": "string"
+    },
+    "resourcegrp": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "appname": {
+      "type": "string"
+    },
+    "businessunit": {
+      "type": "string"
+    },
+    "objectid": {
+      "type": "string"
+    }
+  },
+  "variables": {},
+   
+    "resources": [
+      {
+        "type": "Microsoft.DataFactory/factories",
+        "apiVersion": "[parameters('apiVersion')]",
+        "name": "[parameters('name')]",
+        "location": "[parameters('location')]",
+        "identity": {
+          "type": "SystemAssigned"
+        },
+        "properties": {},
+        "tags": {
+          "appname": "[parameters('appname')]",
+          "assetname": "[parameters('assetname')]",
+          "businessunit": "[parameters('businessunit')]",
+          "envname": "[parameters('envname')]",
+          "envtype": "[parameters('envtype')]",
+          "maintwindow": "[parameters('maintwindow')]",
+          "objectid": "[parameters('objectid')]",
+          "resourcegrp": "[parameters('resourcegrp')]",
+          "tenanttype": "[parameters('tenanttype')]",
+          "version": "[parameters('version')]"
+        }
+      }
+    ]
+}

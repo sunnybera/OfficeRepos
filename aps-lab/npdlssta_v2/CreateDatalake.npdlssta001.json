@@ -1,0 +1,142 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string"
+    },
+    "storageAccountName": {
+      "type": "string"
+    },
+    "maintwindow": {
+      "type": "string"
+    },
+    "envname": {
+      "type": "string",
+      "defaultValue": "APS NonProd",
+      "allowedValues": [
+        "APS Prod",
+        "APS NonProd",
+        "APS Dev"
+      ]
+    },
+    "envtype": {
+      "type": "string",
+      "defaultValue": "Dev",
+      "allowedValues": [
+        "Dev",
+        "Test",
+        "QA",
+        "PreProd",
+        "Prod",
+        "Standby",
+        "Training",
+        "ProcessControl",
+        "ProdSupport",
+        "Unknown",
+        "DR"
+      ]
+    },
+    "tenanttype": {
+      "type": "string"
+    },
+    "assetname": {
+      "type": "string"
+    },
+    "resourcegrp": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "appname": {
+      "type": "string"
+    },
+    "businessunit": {
+      "type": "string"
+    },
+    "objectid": {
+      "type": "string"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "apiVersion": "2019-04-01",
+      "kind": "StorageV2",
+      "location": "[parameters('location')]",
+      "name": "[parameters('storageAccountName')]",
+      //        "metadata": {
+      //          "description": "Provide the Account kind as StorageV2 (general purpose v2).",
+      "properties": {
+        "isHnsEnabled": true,
+        //           "metadata": {
+        //              "description": "Provide Hlierarchical namespace requirement information.",
+        "networkAcls": {
+          "bypass": "AzureServices",
+          "virtualNetworkRules": [],
+          "ipRules": [],
+          "defaultAction": "Allow"
+        },
+        "supportsHttpsTrafficOnly": true,
+        //              "metadata": {
+        //                "description": "Provide Secured transfer (HTTPS) requirement information.",
+        "encryption": {
+          "services": {
+            "file": {
+              "enabled": true
+            },
+            "blob": {
+              "enabled": true
+            }
+          },
+          "keySource": "Microsoft.Storage"
+        },
+        "accessTier": "Hot"
+        //                "metadata": {
+        //                  "description": "Provide the access tier information Hot/Cool."
+      },
+      "sku": {
+        "name": "Standard_RAGRS",
+        "tier": "Standard"
+        //       "metadata": {
+        //        "description": "Provide the Replication type as Read-access geo-redundant storage(RE-GRS)."
+      },
+      "tags": {
+        "appname": "[parameters('appname')]",
+        "assetname": "[parameters('assetname')]",
+        "businessunit": "[parameters('businessunit')]",
+        "envname": "[parameters('envname')]",
+        "envtype": "[parameters('envtype')]",
+        "maintwindow": "[parameters('maintwindow')]",
+        "objectid": "[parameters('objectid')]",
+        "resourcegrp": "[parameters('resourcegrp')]",
+        "tenanttype": "[parameters('tenanttype')]",
+        "version": "[parameters('version')]"
+      },
+      "type": "Microsoft.Storage/storageAccounts"
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/blobServices",
+      "apiVersion": "2019-04-01",
+      "name": "[concat(parameters('storageAccountName'), '/default')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+      ],
+      "properties": {
+        "cors": {
+          "corsRules": []
+        },
+        "deleteRetentionPolicy": {
+          "enabled": false
+        }
+      }
+    }
+  ],
+  "outputs": {
+    "storageAccountName": {
+      "type": "string",
+      "value": "[parameters('storageAccountName')]"
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the storage account."
+      }
+    },
+    "storageAccountType": {
+      "allowedValues": [
+        "Standard_LRS",
+        "Standard_GRS",
+        "Standard_ZRS",
+        "Premium_LRS"
+      ],
+      "metadata": {
+        "description": "Storage Account type"
+      },
+      "type": "string"
+    },
+    "storageKind": {
+      "type": "string",
+      "defaultValue": "StorageV2"
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Location for all resources."
+      }
+    },
+    "maintwindow": {
+      "type": "string",
+      "defaultValue": "\"{\"stop\":null,\"days\":null,\"start\":null}\""
+    },
+    "appname": {
+      "type": "string",
+      "allowedValues": [
+        "AppName",
+        "null",
+        "N/A",
+        "AppInsights",
+        "ADB2C",
+        "APIM",
+        "Evanios/SNOMid",
+        "ELK",
+        "Keyvault",
+        "NetworkWatcher",
+        "PubIP",
+        "PaloAlto",
+        "NSG",
+        "LoadBalance",
+        "UDR",
+        "Redis",
+        "Backup",
+        "Chef",
+        "VNET",
+        "ASE",
+        "Nessus",
+        "Mobility",
+        "VPN",
+        "Storage",
+        "Ansible"
+      ]
+    },
+    "assetname": {
+      "type": "string"
+    },
+    "businessunit": {
+      "type": "string",
+      "defaultValue": "ITECH",
+      "allowedValues": [
+        "ITECH",
+        "CSERV"
+      ]
+    },
+    "envname": {
+      "type": "string",
+      "defaultValue": "APS Dev",
+      "allowedValues": [
+        "APS Prod",
+        "APS NonProd",
+        "APS Dev",
+        "SC NonProd",
+        "SC Prod"
+      ]
+    },
+    "envtype": {
+      "type": "string",
+      "defaultValue": "Unknown",
+      "allowedValues": [
+        "Dev",
+        "Test",
+        "QA",
+        "PreProd",
+        "Prod",
+        "Standby",
+        "Training",
+        "ProcessControl",
+        "ProdSupport",
+        "Unknown",
+        "DR"
+      ]
+    },
+    "resourcegrp": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().name]"
+    },
+    "tenanttype": {
+      "type": "string",
+      "defaultValue": "CommonSvcs",
+      "allowedValues": [
+        "Hub",
+        "CommonSvcs",
+        "Mgmt",
+        "AppEnv",
+        "Network",
+        "DMZ"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "defaultValue": "1.0.0"
+    },
+    "objectid": {
+      "type": "string",
+      "defaultValue": ""
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "name": "[parameters('storageName')]",
+      "apiVersion": "2018-07-01",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "[parameters('storageAccountType')]"
+      },
+      "kind": "[parameters('storageKind')]",
+      "tags": {
+        "maintwindow": "[parameters('maintwindow')]",
+        "appname": "[parameters('appname')]",
+        "assetname": "[parameters('assetname')]",
+        "businessunit": "[parameters('businessunit')]",
+        "envname": "[parameters('envname')]",
+        "envtype": "[parameters('envtype')]",
+        "resourcegrp": "[parameters('resourcegrp')]",
+        "tenanttype": "[parameters('tenanttype')]",
+        "version": "[parameters('version')]",
+        "objectid": "[parameters('objectid')]"
+      },
+      "properties": {
+        "supportsHttpsTrafficOnly": true
+      }
+    }
+  ],
+  "outputs": {
+    "storageAccountName": {
+      "type": "string",
+      "value": "[parameters('storageName')]"
+    }
+  }
+}

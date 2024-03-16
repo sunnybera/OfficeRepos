@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "workspaceName": {
+      "value": "np-dlc-dbw-001"
+    },
+    "customVirtualNetworkId": {
+      "value": "/subscriptions/c5feda46-4c7a-4fae-b825-1301a725520f/resourceGroups/np-dlc-rg-001/providers/Microsoft.Network/virtualNetworks/np-dlc-vnet-001"
+    },
+    "managedResourceGroupName": {
+      "value": "np-dlc-rg-004"
+    },
+    "pricingTier": {
+      "value": "trial"
+    },
+    "customPrivateSubnetName": {
+      "value": "np-dlc-vnet-001-10.102.240.0-23"
+    },
+    "customPublicSubnetName": {
+      "value": "np-dlc-vnet-001-10.102.242.0-23"
+    }
+  }
+}

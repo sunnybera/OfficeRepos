@@ -1,0 +1,158 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "nsgName": {
+      "type": "string",
+      "metadata": {
+        "description": "Provide the name of the network security group to create in parameter template."
+      }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Location for all resources."
+      }
+    }
+  },
+   "variables": {
+      "azureRegionToControlPlaneIp": {
+      "eastus": "23.101.152.95/32",
+      "eastus2": "23.101.152.95/32",
+      "eastus2euap": "23.101.152.95/32"
+    },
+    "controlPlaneIp": "[variables('azureRegionToControlPlaneIp')[parameters('location')]]",
+    "azureRegionToWebappIp": {
+      "eastus": "40.70.58.221/32",
+      "eastus2": "40.70.58.221/32",
+      "eastus2euap": "40.70.58.221/32"
+    },
+    "webappIp": "[variables('azureRegionToWebappIp')[parameters('location')]]"
+  },
+  "resources": [
+    {
+      "apiVersion": "2018-02-01",
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "location": "[parameters('location')]",
+      "name": "[parameters('nsgName')]",
+      "properties": {
+        "securityRules": [
+          {
+            "name": "databricks-worker-to-worker-inbound",
+            "properties": {
+              "access": "Allow",
+              "description": "Required for worker nodes communication within a cluster.",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "*",
+              "direction": "Inbound",
+              "priority": 200,
+              "protocol": "*",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "sourcePortRange": "*"
+            }
+          },
+          {
+            "name": "databricks-control-plane-ssh",
+            "properties": {
+              "access": "Allow",
+              "description": "Required for Databricks control plane management of worker nodes.",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "22",
+              "direction": "Inbound",
+              "priority": 100,
+              "protocol": "*",
+              "sourceAddressPrefix": "[variables('controlPlaneIp')]",
+              "sourcePortRange": "*"
+            }
+          },
+          {
+            "name": "databricks-control-plane-worker-proxy",
+            "properties": {
+              "access": "Allow",
+              "description": "Required for Databricks control plane communication with worker nodes.",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "5557",
+              "direction": "Inbound",
+              "priority": 110,
+              "protocol": "*",
+              "sourceAddressPrefix": "[variables('controlPlaneIp')]",
+              "sourcePortRange": "*"
+            }
+          },
+          {
+            "name": "databricks-worker-to-webapp",
+            "properties": {
+              "access": "Allow",
+              "description": "Required for workers communication with Databricks Webapp.",
+              "destinationAddressPrefix": "[variables('webappIp')]",
+              "destinationPortRange": "*",
+              "direction": "Outbound",
+              "priority": 100,
+              "protocol": "*",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*"
+            }
+          },
+          {
+            "name": "databricks-worker-to-sql",
+            "properties": {
+              "access": "Allow",
+              "description": "Required for workers communication with Azure SQL services.",
+              "destinationAddressPrefix": "Sql",
+              "destinationPortRange": "*",
+              "direction": "Outbound",
+              "priority": 110,
+              "protocol": "*",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*"
+            }
+          },
+          {
+            "name": "databricks-worker-to-storage",
+            "properties": {
+              "access": "Allow",
+              "description": "Required for workers communication with Azure Storage services.",
+              "destinationAddressPrefix": "Storage",
+              "destinationPortRange": "*",
+              "direction": "Outbound",
+              "priority": 120,
+              "protocol": "*",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*"
+            }
+          },
+          {
+            "name": "databricks-worker-to-worker-outbound",
+            "properties": {
+              "access": "Allow",
+              "description": "Required for worker nodes communication within a cluster.",
+              "destinationAddressPrefix": "VirtualNetwork",
+              "destinationPortRange": "*",
+              "direction": "Outbound",
+              "priority": 130,
+              "protocol": "*",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*"
+            }
+          },
+          {
+            "name": "databricks-worker-to-any",
+            "properties": {
+              "access": "Allow",
+              "description": "Required for worker nodes communication with any destination.",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "*",
+              "direction": "Outbound",
+              "priority": 140,
+              "protocol": "*",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+

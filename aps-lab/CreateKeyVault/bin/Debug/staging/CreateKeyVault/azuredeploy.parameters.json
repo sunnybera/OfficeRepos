@@ -1,0 +1,94 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "value": "np-dls-kv-001"
+    },
+    "location": {
+      "value": "eastus2"
+    },
+    "sku": {
+      "value": "Standard"
+    },
+    "accessPolicies": {
+      "value": [
+        {
+          "objectId": "",
+          "tenantId": "",
+          "permissions": {
+            "keys": [
+              "Get",
+              "List",
+              "Update",
+              "Create",
+              "Import",
+              "Delete",
+              "Recover",
+              "Backup",
+              "Restore"
+            ],
+            "secrets": [
+              "Get",
+              "List",
+              "Set",
+              "Delete",
+              "Recover",
+              "Backup",
+              "Restore"
+            ],
+            "certificates": [
+              "Get",
+              "List",
+              "Update",
+              "Create",
+              "Import",
+              "Delete",
+              "Recover",
+              "Backup",
+              "Restore",
+              "ManageContacts",
+              "ManageIssuers",
+              "GetIssuers",
+              "ListIssuers",
+              "SetIssuers",
+              "DeleteIssuers"
+            ]
+          }
+        }
+      ]
+    },
+    "networkAcls": {
+      "value": {
+        "defaultAction": "Allow",
+        "bypass": "AzureServices",
+        "ipRules": [],
+        "virtualNetworkRules": []
+      }
+    },
+    "appname": { "value": "Key Vault" },
+    "envname": { "value": "APS NonProd" },
+    "envtype": { "value": "Dev" },
+    "tenanttype": { "value": "DLS" },
+    "assetname": { "value": "np-dls-kv-001" },
+    "version": { "value": "1.0.0" },
+    "objectid": { "value": "" },
+    "tenantid": { "value": "" },
+    "businessunit": { "value": "ITECH" },
+    "maintwindow": { "value": "\"{\"stop\":null,\"days\":null,\"start\":null}\"" },
+    "resourcegrp": { "value": "np-dls-rg-003" },
+
+    "tenant": {
+      "value": ""
+    },
+    "enabledForDeployment": {
+      "value": true
+    },
+    "enabledForTemplateDeployment": {
+      "value": true
+    },
+    "enabledForDiskEncryption": {
+      "value": true
+    }
+  }
+}

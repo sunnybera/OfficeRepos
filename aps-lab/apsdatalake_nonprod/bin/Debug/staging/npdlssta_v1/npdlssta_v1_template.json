@@ -1,0 +1,79 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string"
+    },
+    "storageAccountName": {
+      "type": "string"
+    },
+    "accountType": {
+      "type": "string",
+      "defaultValue": "Standard_RAGRS",
+      "metadata": {
+        "description": "Provide the Replication type as Read-access geo-redundant storage(RE-GRS)."
+      }
+    },
+    "kind": {
+      "type": "string",
+      "defaultValue": "StorageV2",
+      "metadata": {
+        "description": "Provide the Account kind as StorageV2 (general purpose v2)."
+      }
+    },
+    "accessTier": {
+      "type": "string",
+      "defaultValue": "Hot",
+      "metadata": {
+        "description": "Provide the access tier information Hot/Cool."
+      }
+    },
+    "supportsHttpsTrafficOnly": {
+      "type": "bool",
+      "defaultValue": true,
+      "metadata": {
+        "description": "Provide Secured transfer (HTTPS) requirement information."
+      }
+    },
+    "isHnsEnabled": {
+      "defaultValue": true,
+      "metadata": {
+        "description": "Provide Hlierarchical namespace requirement information."
+      },
+      "type": "bool"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "name": "[parameters('storageAccountName')]",
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2019-04-01",
+      "location": "[parameters('location')]",
+      "properties": {
+        "accessTier": "[parameters('accessTier')]",
+        "supportsHttpsTrafficOnly": "[parameters('supportsHttpsTrafficOnly')]",
+        "isHnsEnabled": "[parameters('isHnsEnabled')]"
+      },
+      "dependsOn": [],
+      "sku": {
+        "name": "[parameters('accountType')]"
+      },
+      "kind": "[parameters('kind')]",
+      "tags": {
+        "appname": "Storage",
+        "businessunit": "ITECH",
+        "envname": "APS NonProd",
+        "envtype": "Dev",
+        "maintwindow": "\"{\"stop\":null,\"days\":null,\"start\":null}\"",
+        "objectid": "",
+        "resourcegrp": "np-dls-rg-003",
+        "tenanttype": "DLS",
+        "version": "1.0.0"
+      }
+    }
+  ],
+  "outputs": {}
+
+}

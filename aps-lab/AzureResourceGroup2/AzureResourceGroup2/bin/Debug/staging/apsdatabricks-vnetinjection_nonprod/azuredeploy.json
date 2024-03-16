@@ -1,0 +1,88 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "customPrivateSubnetName": {
+      "defaultValue": "private-dataeng",
+      "metadata": {
+        "description": "Provide the name of the private subnet in the custom VNet."
+      },
+      "type": "string"
+    },
+    "customPublicSubnetName": {
+      "type": "string",
+      "defaultValue": "public-dataeng",
+      "metadata": {
+        "description": "Provide the name of the public subnet in the custom VNet."
+      }
+    },
+    "customVirtualNetworkId": {
+      "type": "string",
+      "metadata": {
+        "description": "The complete ARM resource Id of the custom virtual network."
+      }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Location for all resources."
+      }
+    },
+    "nsgName": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of the network security group to create."
+      }
+    },
+    "pricingTier": {
+      "defaultValue": "trial",
+      "allowedValues": [
+        "trial",
+        "standard",
+        "premium"
+      ],
+      "type": "string",
+      "metadata": {
+        "description": "The pricing tier of workspace."
+      }
+    },
+    "workspaceName": {
+      "type": "string",
+      "metadata": {
+        "description": "Provide the name of the Azure Databricks workspace to create as per APS Naming startdards."
+      }
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2018-04-01",
+      "comments": "The resource group specified will be locked after deployment.",
+      "location": "[parameters('location')]",
+      "name": "[parameters('workspaceName')]",
+      "properties": {
+        "ManagedResourceGroupId": "[variables('managedResourceGroupId')]",
+        "parameters": {
+          "customVirtualNetworkId": {
+            "value": "[parameters('customVirtualNetworkId')]"
+          },
+          "customPublicSubnetName": {
+            "value": "[parameters('customPublicSubnetName')]"
+          },
+          "customPrivateSubnetName": {
+            "value": "[parameters('customPrivateSubnetName')]"
+          }
+        }
+      },
+      "sku": {
+        "name": "[parameters('pricingTier')]"
+      },
+      "type": "Microsoft.Databricks/workspaces"
+    }
+  ],
+  "variables": {
+    "managedResourceGroupId": "[concat(subscription().id, '/resourceGroups/', variables('managedResourceGroupName'))]",
+    "managedResourceGroupName": "[concat('databricks-rg-', parameters('workspaceName'), '-', uniqueString(parameters('workspaceName'), resourceGroup().id))]"
+
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string"
+    },
+    "storageAccountName": {
+      "type": "string"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2019-04-01",
+      "name": "[parameters('storageAccountName')]",
+      "location": "[parameters('location')]",
+      "tags": {
+        "appname": "Storage",
+        "businessunit": "ITECH",
+        "envname": "APS NonProd",
+        "envtype": "Dev",
+        "maintwindow": "\"{\"stop\":null,\"days\":null,\"start\":null}\"",
+        "objectid": "",
+        "resourcegrp": "np-dls-rg-003",
+        "tenanttype": "DLS",
+        "version": "1.0.0"
+      },
+      "sku": {
+        "name": "Standard_RAGRS",
+        "tier": "Standard",
+//       "metadata": {
+//        "description": "Provide the Replication type as Read-access geo-redundant storage(RE-GRS)."
+        },
+        "kind": "StorageV2",
+//        "metadata": {
+//          "description": "Provide the Account kind as StorageV2 (general purpose v2).",
+          "properties": {
+            "isHnsEnabled": true,
+//           "metadata": {
+//              "description": "Provide Hlierarchical namespace requirement information.",
+              "networkAcls": {
+                "bypass": "AzureServices",
+                "virtualNetworkRules": [],
+                "ipRules": [],
+                "defaultAction": "Allow"
+              },
+              "supportsHttpsTrafficOnly": true,
+//              "metadata": {
+//                "description": "Provide Secured transfer (HTTPS) requirement information.",
+                "encryption": {
+                  "services": {
+                    "file": {
+                      "enabled": true
+                    },
+                    "blob": {
+                      "enabled": true
+                    }
+                  },
+                  "keySource": "Microsoft.Storage"
+                },
+                "accessTier": "Hot"
+//                "metadata": {
+//                  "description": "Provide the access tier information Hot/Cool."
+                }
+              },
+              {
+                "type": "Microsoft.Storage/storageAccounts/blobServices",
+                "apiVersion": "2019-04-01",
+                "name": "[concat(parameters('storageAccountName'), '/default')]",
+                "dependsOn": [
+                  "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+                ],
+                "properties": {
+                  "cors": {
+                    "corsRules": []
+                  },
+                  "deleteRetentionPolicy": {
+                    "enabled": false
+                  }
+                }
+              }
+              ]
+            }

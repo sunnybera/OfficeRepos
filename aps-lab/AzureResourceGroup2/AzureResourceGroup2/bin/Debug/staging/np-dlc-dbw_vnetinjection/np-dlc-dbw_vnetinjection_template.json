@@ -1,0 +1,102 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "customPrivateSubnetName": {
+      "defaultValue": "np-dlc-snet-001",
+      "metadata": {
+        "description": "Provide the name of the private subnet in the custom VNet."
+      },
+      "type": "string"
+    },
+    "customPublicSubnetName": {
+      "defaultValue": "np-dlc-snet-002",
+      "metadata": {
+        "description": "Provide the name of the public subnet in the custom VNet."
+      },
+      "type": "string"
+    },
+    "customVirtualNetworkId": {
+      "type": "string",
+      "metadata": {
+        "description": "The complete ARM resource Id of the custom virtual network."
+      }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Location for all resources."
+      }
+    },
+    "nsgName": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of the network security group to create."
+      }
+    },
+    "pricingTier": {
+      "defaultValue": "trial",
+      "allowedValues": [
+        "trial",
+        "standard",
+        "premium"
+      ],
+      "type": "string",
+      "metadata": {
+        "description": "The pricing tier of workspace."
+      }
+    },
+    "workspaceName": {
+      "type": "string",
+      "metadata": {
+        "description": "Provide the name of the Azure Databricks workspace to create as per APS Naming startdards."
+      }
+    },
+    "managedResourceGroupName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2018-04-01",
+      "comments": "The resource group specified will be locked after deployment.",
+      "location": "[parameters('location')]",
+      "name": "[parameters('workspaceName')]",
+      "properties": {
+        "ManagedResourceGroupId": "[variables('managedResourceGroupId')]",
+        "parameters": {
+          "customVirtualNetworkId": {
+            "value": "[parameters('customVirtualNetworkId')]"
+          },
+          "customPublicSubnetName": {
+            "value": "[parameters('customPublicSubnetName')]"
+          },
+          "customPrivateSubnetName": {
+            "value": "[parameters('customPrivateSubnetName')]"
+          }
+        }
+      },
+      "sku": {
+        "name": "[parameters('pricingTier')]"
+      },
+      "tags": {
+        "appname": "Storage",
+        "businessunit": "ITECH",
+        "envname": "APS NonProd",
+        "envtype": "Dev",
+        "maintwindow": "\"{\"stop\":null,\"days\":null,\"start\":null}\"",
+        "objectid": "",
+        "resourcegrp": "np-dls-rg-003",
+        "tenanttype": "DLS",
+        "version": "1.0.0"
+      },
+      "type": "Microsoft.Databricks/workspaces"
+    }
+  ],
+  "variables": {
+    "managedResourceGroupId": "[concat(subscription().id, '/resourceGroups/', parameters('managedResourceGroupName'))]"
+    //    "managedResourceGroupName": "[concat('databricks-rg-', parameters('workspaceName'), '-', uniqueString(parameters('workspaceName'), resourceGroup().id))]"
+
+  }
+}
