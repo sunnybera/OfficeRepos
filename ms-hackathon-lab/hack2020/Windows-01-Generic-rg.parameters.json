@@ -1,0 +1,131 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "adminPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/[subscriptions-id]/resourceGroups/[resourcegroup-id]/providers/Microsoft.KeyVault/vaults/[keyvault-id]"
+                },
+                "secretName": "VM-Password"
+            }
+        },
+        "oupartifactstrgacc01key": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/[subscriptions-id]/resourceGroups/[resourcegroup-id]/providers/Microsoft.KeyVault/vaults/[keyvault-id]"
+                },
+                "secretName": "[secretName-key]"
+            }
+        },
+        "oupartifactstrgacc01sasToken": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/[subscriptions-id]/resourceGroups/[resourcegroup-id]/providers/Microsoft.KeyVault/vaults/[keyvault-id]"
+                },
+                "secretName": "[secretName-key]"
+            }
+        },
+        "prefix": {
+            "value": "region-apphnd-"
+        },
+        "availabilitySet": {
+            "value": {
+                "nameSuffix": "as-02",
+                "faultDomain": "2",
+                "updateDomain": "5"
+            }
+        },
+        "network": {
+            "value": {
+                "name": "region-location-vnet",
+                "resourceGroup": "region-location-vnet-01-rg",
+                "appSubnet": "region-location-general-app-01-snet",
+                "ipRange": "10.11.196."
+            }
+        },
+        "nicIpConfigurations": {
+            "value": [
+                {
+                    "nicsuffix": "-nic01",
+                    "ipConfigName": "ipconfig1",
+                    "privateIPAddressSuffix": "7",
+                    "acceleratedNetworking": "false",
+                    "ipForwarding": "false"
+                }
+            ]
+        },
+        "vm": {
+            "value": {
+                "computes": [
+                    {
+                        "autoNumber": "01",
+                        "size": "Standard_B2ms",
+                        "settings": {
+                            "osDiskSize": "32",
+                            "osDiskType": "Premium_LRS",
+                            "adminUsername": "admin",
+                            "publisher" : "MicrosoftWindowsServer",
+                            "offer":"WindowsServer",
+                            "sku": "2016-Datacenter-smalldisk"
+                        },
+                        "dataDisks": [
+                            {
+                                "caching": "ReadWrite",
+                                "diskSizeGB": 128,
+                                "dataDiskType": "Standard_LRS"
+                            },
+                            {
+                                "caching": "None",
+                                "diskSizeGB": 64,
+                                "dataDiskType": "Premium_LRS"
+                            },
+                            {
+                                "caching": "None",
+                                "diskSizeGB": 128,
+                                "dataDiskType": "Standard_LRS"
+                            }
+                        ]
+                    }                   
+
+                ]
+            }
+        },
+        "artifacts": {
+            "value": {
+                "storageName": "artifactstrgacc01",
+                "containerName": "extensions",
+                "WindowsCustomScriptMain": "WindowsCustomScriptMain.ps1",
+                "WindowsDSMAgent": "WindowsDSMAgentInstall.ps1",
+                "WindowsBackupSimple": "WindowsBackupSimpleInstall.ps1",
+                "isBackupSimple": "$False",
+                "filePaths": [
+                    "https://[storageurl]/extensions/WindowsCustomScriptMain.ps1",
+                    "https://[storageurl]/extensions/WindowsBackupSimpleInstall.ps1",
+                    "https://[storageurl]/extensions/WindowsDSMAgentInstall.ps1"
+                ]
+            }
+        },
+        "diagnosticStorage": {
+            "value": {
+                "name": "regionlocationsqlstrgacc011",
+                "type": "Standard_LRS",
+                "kind": "Storage"
+            }
+        },
+        "tags": {
+            "value": {
+                "applicationId": "",
+                "MaintenanceWindow": "Schedule1",
+                "backupTag": "",
+                "businessUnit": "",
+                "costCentreCode": "",
+                "environment": "regionelopment",
+                "functionality": "",
+                "monitoring": "",
+                "owner": "",
+                "schedule": ""
+            }
+        }
+    }
+}

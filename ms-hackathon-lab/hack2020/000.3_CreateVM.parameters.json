@@ -1,0 +1,69 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+
+    "virtualMachines_name": {
+      "Value": "[concat('VM-', resourceGroup().name)]"
+
+    },
+    "networkInterfaces_nic_name": {
+      "Value": "[concat('NIC-', resourceGroup().name)]"
+    },
+    "publicIPAddresses_pip_name": {
+      "Value": "[concat('PIP-', resourceGroup().name)]"
+    },
+    "virtualNetworks_np_cal_vnet_002_externalid": {
+      "Value": "/subscriptions/8a9a4c1c-ea49-47af-a059-d790e9782847/resourceGroups/np-cal-rg-002/providers/Microsoft.Network/virtualNetworks/np-cal-vnet-002"
+    },
+    "location": {
+      "Value": "eastus"
+    },
+    "adminUsername": {
+      "Value": "calibadmin"
+    },
+    "adminpassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/8a9a4c1c-ea49-47af-a059-d790e9782847/resourceGroups/calibereastus/providers/Microsoft.KeyVault/vaults/caliber2kv"
+        },
+        "secretName": "vmadmin"
+      }
+    },
+    "OsDisk_name": {
+      "Value": "[concat('OSDisk-', resourceGroup().name)]"
+    },
+    "artifacts": {
+      "value": {
+        "storageName": "npcalsa001",
+        "containerName": "np-cal-ctn-001",
+        "WindowsCustomScriptMain": "2.2_ForNewlyBuiltVM_V1.ps1",
+        "isBackupSimple": "$False",
+        "filePaths": [
+          "https://npcalsa001.blob.core.windows.net/np-cal-ctn-001/2.2_ForNewlyBuiltVM_V1.ps1"
+        ]
+      }
+    },
+    "diagnosticStorage": {
+      "value": {
+        "name": "regionlocationsqlstrgacc011",
+        "type": "Standard_LRS",
+        "kind": "Storage"
+      }
+    },
+    "tags": {
+      "value": {
+        "applicationId": "",
+        "MaintenanceWindow": "Schedule1",
+        "backupTag": "",
+        "businessUnit": "",
+        "costCentreCode": "",
+        "environment": "regionelopment",
+        "functionality": "",
+        "monitoring": "",
+        "owner": "",
+        "schedule": ""
+      }
+    }
+  }
+} 

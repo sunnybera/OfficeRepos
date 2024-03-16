@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminpassword": {
+      "value": "Welcome@555"
+    },
+    "adminUsername": {
+      "Value": "calibadmin",
+      "value": "calibadmin"
+    },
+    "artifactkey": {
+      "value": "fR9NJdp0TJrS+gdcQuSJ0gWpYxHz4wq0UQk0C30TvkpbqvlRG4x4rvrQXtWq8eXD8tIvBOoc2nIT30LV1eNbdA=="
+    },
+    "artifacts": {
+      "value": {
+        "storageName": "npcalsa001",
+        "containerName": "np-cal-ctn-001",
+        "WindowsCustomScriptMain": "2.2_ForNewlyBuiltVM_V1.ps1",
+        "isBackupSimple": "$False",
+        "filePaths": [
+          "https://npcalsa001.blob.core.windows.net/np-cal-ctn-001/2.2_ForNewlyBuiltVM_V1.ps1"
+        ]
+      }
+    },
+    "location": {
+      "Value": "eastus",
+      "value": "eastus"
+    },
+    "networkInterfaces_nic_name": {
+      "Value": "[concat('NIC-', resourceGroup().name)]",
+      "value": "Test"
+    },
+    "OsDisk_name": {
+      "Value": "[concat('OSDisk-', resourceGroup().name)]",
+      "value": "Test"
+    },
+    "publicIPAddresses_pip_name": {
+      "Value": "[concat('PIP-', resourceGroup().name)]",
+      "value": "Test"
+    },
+    "virtualMachines_name": {
+      "Value": "[concat('VM-', resourceGroup().name)]",
+      "value": "Test"
+
+    },
+    "virtualNetworks_np_cal_vnet_002_externalid": {
+      "Value": "/subscriptions/8a9a4c1c-ea49-47af-a059-d790e9782847/resourceGroups/np-cal-rg-002/providers/Microsoft.Network/virtualNetworks/np-cal-vnet-002",
+      "value": "/subscriptions/8a9a4c1c-ea49-47af-a059-d790e9782847/resourceGroups/np-cal-rg-002/providers/Microsoft.Network/virtualNetworks/np-cal-vnet-002"
+    }
+  }
+}

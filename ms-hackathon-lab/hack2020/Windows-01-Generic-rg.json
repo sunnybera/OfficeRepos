@@ -1,0 +1,228 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "adminPassword": {
+            "type": "securestring"
+        },
+        "artifactstrgacc01key": {
+            "type": "securestring"
+        },
+        "artifactstrgacc01sasToken": {
+            "type": "securestring"
+        },
+        "prefix": {
+            "type": "string"
+        },
+        "availabilitySet": {
+            "type": "object"
+        },
+        "network": {
+            "type": "object"
+        },
+        "nicIpConfigurations": {
+            "type": "array"
+        },
+        "vm": {
+            "type": "object"
+        },
+        "diagnosticStorage": {
+            "type": "object"
+        },
+        "artifacts": {
+            "type": "object"
+        },
+        "tags": {
+            "type": "object"
+        }
+    },
+    "variables": {
+        "location": "[resourceGroup().location]",
+        "prefix": "parameters(prefix)",
+        "vnetID": "[resourceId(parameters('network').resourceGroup, 'Microsoft.Network/virtualNetworks', parameters('network').name)]",
+        "appSubnetRef": "[concat(variables('vnetID'),'/subnets/', parameters('network').appSubnet)]",
+        "artifacts": {
+        }
+    },
+    "resources": [
+        {
+            "name": "[concat(parameters('prefix'),parameters('availabilitySet').nameSuffix)]",
+            "type": "Microsoft.Compute/availabilitySets",
+            "apiVersion": "2017-03-30",
+            "location": "[variables('location')]",
+            "tags": "[parameters('tags')]",
+            "properties": {
+                "platformFaultDomainCount": "[parameters('availabilitySet').faultDomain]",
+                "platformUpdateDomainCount": "[parameters('availabilitySet').updateDomain]"
+            },
+            "sku": {
+                "name": "Aligned"
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[concat(parameters('prefix'),parameters('vm').computes[copyIndex()].autoNumber,parameters('nicIpConfigurations')[copyIndex()].nicsuffix)]",
+            "copy": {
+                "name": "nicCount",
+                "count": "[length(parameters('nicIpConfigurations'))]"
+            },
+            "apiVersion": "2018-02-01",
+            "location": "[variables('location')]",
+            "tags": "[parameters('tags')]",
+            "scale": null,
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "[parameters('nicIpConfigurations')[copyIndex()].ipConfigName]",
+                        "properties": {
+                            "privateIPAddress": "[concat(parameters('network').ipRange, parameters('nicIpConfigurations')[copyIndex()].privateIPAddressSuffix)]",
+                            "privateIPAllocationMethod": "Static",
+                            "subnet": {
+                                "id": "[variables('appSubnetRef')]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": []
+                },
+                "enableAcceleratedNetworking": "[parameters('nicIpConfigurations')[copyIndex()].acceleratedNetworking]",
+                "enableIPForwarding": "[parameters('nicIpConfigurations')[copyIndex()].ipForwarding]",
+                "primary": true
+            },
+            "dependsOn": []
+        },
+        {
+            "name": "[parameters('diagnosticStorage').name]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2018-02-01",
+            "location": "[variables('location')]",
+            "tags": "[parameters('tags')]",
+            "properties": {},
+            "kind": "[parameters('diagnosticStorage').kind]",
+            "sku": {
+                "name": "[parameters('diagnosticStorage').type]"
+            }
+        },
+        {
+            "name": "[concat(parameters('prefix'),parameters('vm').computes[copyIndex()].autoNumber)]",
+            "copy": {
+                "name": "vmCopy",
+                "count": "[length(parameters('vm').computes)]",
+                "mode": "Serial"
+            },
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2018-04-01",
+            "location": "[variables('location')]",
+            "tags": "[parameters('tags')]",
+            "dependsOn": [
+                "[concat('Microsoft.Network/networkInterfaces/', parameters('prefix'),parameters('vm').computes[copyIndex()].autoNumber,parameters('nicIpConfigurations')[copyIndex()].nicsuffix)]",
+                "[concat('Microsoft.Storage/storageAccounts/', parameters('diagnosticStorage').name)]",
+                "[concat('Microsoft.Compute/availabilitySets/', parameters('prefix'), parameters('availabilitySet').nameSuffix)]"
+            ],
+            "properties": {
+                "availabilitySet": {
+                    "id": "[resourceId('Microsoft.Compute/availabilitySets', concat(parameters('prefix'),parameters('availabilitySet').nameSuffix))]"
+                },
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vm').computes[copyIndex()].size]"
+                },
+                "storageProfile": {
+                    "osDisk": {
+                        "createOption": "fromImage",
+                        "name": "[concat(parameters('prefix'),parameters('vm').computes[copyIndex()].autoNumber,'-osdisk')]",
+                        "managedDisk": {
+                            "storageAccountType": "[parameters('vm').computes[copyIndex()].settings.osDiskType]"
+                        },
+                        "diskSizeGB": "[parameters('vm').computes[copyIndex()].settings.osDiskSize]"
+                    },
+                    "copy": [
+                        {
+                            "name": "dataDisks",
+                            "count": "[length(parameters('vm').computes[copyIndex('vmCopy')].dataDisks)]",
+                            "input": {
+                                "name": "[concat(parameters('prefix'),parameters('vm').computes[copyIndex('vmCopy')].autoNumber,'-dataDisk', copyIndex('dataDisks', 1))]",
+                                "diskSizeGB": "[parameters('vm').computes[copyIndex('vmCopy')].dataDisks[copyIndex('dataDisks')].diskSizeGB]",
+                                "lun": "[copyIndex('dataDisks')]",
+                                "createOption": "Empty",
+                                "caching": "[parameters('vm').computes[copyIndex('vmCopy')].dataDisks[copyIndex('dataDisks')].caching]",
+                                "managedDisk": {
+                                    "storageAccountType": "[parameters('vm').computes[copyIndex('vmCopy')].dataDisks[copyIndex('dataDisks')].dataDiskType]"
+                                }
+                            }
+                        }
+                    ],
+                    "imageReference": {
+                        "publisher": "[parameters('vm').computes[copyIndex()].settings.publisher]",
+                        "offer": "[parameters('vm').computes[copyIndex()].settings.offer]",
+                        "sku": "[parameters('vm').computes[copyIndex()].settings.sku]",
+                        "version": "latest"
+                    }
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces',concat(parameters('prefix'),parameters('vm').computes[copyIndex()].autoNumber,parameters('nicIpConfigurations')[copyIndex()].nicsuffix))]"
+                        }
+                    ]
+                },
+                "osProfile": {
+                    "computerName": "[concat(parameters('prefix'),parameters('vm').computes[copyIndex()].autoNumber)]",
+                    "adminUsername": "[parameters('vm').computes[copyIndex()].settings.adminUsername]",
+                    "adminPassword": "[parameters('adminPassword')]",
+                    "windowsConfiguration": {
+                        "enableAutomaticUpdates": false,
+                        "provisionVmAgent": true
+                    }
+                },
+                "licenseType": "Windows_Server",
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "[concat('https', '://', parameters('diagnosticStorage').name, '.blob.core.windows.net', '/')]"
+                    }
+                }
+            }
+        },
+        {
+            "apiVersion": "2018-06-01",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('prefix'),parameters('vm').computes[copyIndex()].autoNumber,'/WindowsAgents')]",
+            "copy": {
+                "name": "extensionCopy",
+                "count": "[length(parameters('vm').computes)]"
+            },
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', parameters('prefix'),parameters('vm').computes[copyIndex()].autoNumber)]"
+            ],
+            "properties": {
+                "publisher": "Microsoft.Compute",
+                "type": "CustomScriptExtension",
+                "typeHandlerVersion": "1.9",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": "[parameters('artifacts').filePaths]"
+                },
+                "protectedSettings": {
+                    "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File WindowsCustomScriptMain.ps1 -backupSimple $False",
+                    "storageAccountName": "parameters('artifacts').storageName",
+                    "storageAccountKey": "[parameters('artifactstrgacc01key')]"
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "adminUsername": {
+            "type": "string",
+            "value": "parameters('prefix'),parameters('vm').computes[copyIndex()].autoNumber"
+        },
+        "subnet": {
+            "type": "string",
+            "value": "[variables('appSubnetRef')]"
+        }
+    }
+}

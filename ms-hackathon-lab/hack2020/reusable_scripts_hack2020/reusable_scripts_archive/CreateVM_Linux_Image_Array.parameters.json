@@ -1,0 +1,70 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "virtualNetworkName": {
+      "value": "vnet-dr-euw-001"
+    },
+    "NetworkRG": {
+      "value": "rg-kaust-euw-001"
+    },
+    "diagstorageAccountName": {
+      "value": "stagqkb5kaklhfn6"
+    },
+    "storageRG": {
+      "value": "rg-kaust-euw-001"
+    },
+    "adminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/5ab66322-398c-4751-b098-225402bdf7a3/resourceGroups/rg-kaust-euw-002/providers/Microsoft.KeyVault/vaults/kv-kaust-euw-002"
+        },
+        "secretName": "sec-vm-suse-euw-002"
+      }
+    },
+    "adminUsername": {
+      "value": "calib-admin"
+    },
+    "VMsConfig": {
+      "value": [
+        {
+          "virtualMachineName": "vm-ubuntu-euw-002",
+          "virtualMachineSize": "Standard_D4s_v3",
+          "subnetName": "snet-shared-euw-spoke",
+          "privateIPAddressType": "Static",
+          "privateIpAddress": "10.11.0.11",
+          "isPublic": 0,
+          "dataDisksCount": 1,
+          "dataDiskSizeLst": [ 50 ],
+          "diskType": "Standard_LRS",
+          //  "ImageResourceGroup": "DevOps-Automation-RG",
+          //  "ImageName": "LinuxImageVM",
+          "publisher": "microsoft_iot_edge",
+          "offer": "iot_edge_vm_ubuntu",
+          "sku": "ubuntu_1604_edgeruntimeonly",
+          "version": "latest",
+          "enableAcceleratedNetworking": false
+        }
+        /*{
+          "virtualMachineName": "LinuxDB02",
+          "virtualMachineSize": "Standard_B2ms",
+          "subnetName": "DB-Subnet",
+          "privateIPAddressType": "Static",
+          "privateIpAddress": "10.1.0.37",
+          "isPublic": 0,
+          "dataDisksCount": 2,
+        //  "ImageResourceGroup": "DevOps-Automation-RG",
+        //  "ImageName": "LinuxImageVM",
+         "publisher": "Canonical",
+            "offer": "UbuntuServer",
+            "sku": "18.04-LTS",
+            "version": "latest",
+          "dataDiskSizeLst": [ 50, 100 ],
+          "diskType": "Standard_LRS",
+          "enableAcceleratedNetworking": false
+        }
+        */
+      ]
+    }
+  }
+}

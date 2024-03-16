@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "Create_Multi_RG_PIP_VM", "Caliber-2020_Solutions\Create_Multi_RG_PIP_VM.deployproj", "{F6D86DA3-4E30-4AD5-A704-3AFD4F668BF9}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "Reusable", "Reusable\Reusable.deployproj", "{F49C66F6-4689-4F34-9371-ADA922AA7DAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6D86DA3-4E30-4AD5-A704-3AFD4F668BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6D86DA3-4E30-4AD5-A704-3AFD4F668BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6D86DA3-4E30-4AD5-A704-3AFD4F668BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6D86DA3-4E30-4AD5-A704-3AFD4F668BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F49C66F6-4689-4F34-9371-ADA922AA7DAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F49C66F6-4689-4F34-9371-ADA922AA7DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F49C66F6-4689-4F34-9371-ADA922AA7DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F49C66F6-4689-4F34-9371-ADA922AA7DAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F99ABA4-13FE-460D-9A99-BEE7EE0BA674}
+	EndGlobalSection
+EndGlobal

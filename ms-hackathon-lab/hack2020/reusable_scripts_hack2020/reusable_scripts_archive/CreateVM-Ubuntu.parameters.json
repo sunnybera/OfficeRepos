@@ -1,0 +1,107 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "westeurope"
+    },
+    "networkInterfaceName": {
+      "value": "vm-nic-euw-001"
+    },
+    "networkSecurityGroupName": {
+      "value": "nsg-hub-euw-001"
+    },
+    "networkSecurityGroupRules": {
+      "value": [
+        {
+          "name": "SSH",
+          "properties": {
+            "priority": 300,
+            "protocol": "TCP",
+            "access": "Allow",
+            "direction": "Inbound",
+            "sourceAddressPrefix": "*",
+            "sourcePortRange": "*",
+            "destinationAddressPrefix": "*",
+            "destinationPortRange": "22"
+          }
+        }
+      ]
+    },
+    "subnetName": {
+      "value": "snet-iam-euw-192.168.2.0-24"
+    },
+    "virtualNetworkName": {
+      "value": "vnet-hub-euw-001"
+    },
+    "addressPrefixes": {
+      "value": [
+        "192.168.0.0/20"
+      ]
+    },
+    "subnets": {
+      "value": [
+        {
+          "name": "snet-iam-euw-192.168.2.0-24",
+          "properties": {
+            "addressPrefix": "192.168.2.0/24"
+          }
+        }
+      ]
+    },
+    "publicIpAddressName": {
+      "value": "vm-pip-euw-001"
+    },
+    "publicIpAddressType": {
+      "value": "Static"
+    },
+    "publicIpAddressSku": {
+      "value": "Standard"
+    },
+    "virtualMachineName": {
+      "value": "vm-ubuntu-euw-001"
+    },
+    "virtualMachineComputerName": {
+      "value": "vm-ubuntu-euw-001"
+    },
+    "virtualMachineRG": {
+      "value": "RG-INFRA-EUW-KAUST"
+    },
+    "osDiskType": {
+      "value": "Premium_LRS"
+    },
+    "virtualMachineSize": {
+      "value": "Standard_D4s_v3"
+    },
+    "adminUsername": {
+      "value": "azureuser"
+    },
+    "diagnosticsStorageAccountName": {
+      "value": "stadiageuw001"
+    },
+    "diagnosticsStorageAccountId": {
+      "value": "Microsoft.Storage/storageAccounts/npdlnrg001diag"
+    },
+    "diagnosticsStorageAccountType": {
+      "value": "Standard_LRS"
+    },
+    "diagnosticsStorageAccountKind": {
+      "value": "Storage"
+    },
+    "autoShutdownStatus": {
+      "value": "Enabled"
+    },
+    "autoShutdownTime": {
+      "value": "23:59"
+    },
+    "autoShutdownTimeZone": {
+      "value": "IST"
+    },
+    "autoShutdownNotificationStatus": {
+      "value": "Disabled"
+    },
+    "autoShutdownNotificationLocale": {
+      "value": "en"
+    }
+  }
+}

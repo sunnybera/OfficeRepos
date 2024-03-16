@@ -1,0 +1,168 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_name": {
+            "defaultValue": "caliber-vm",
+            "type": "String"
+        },
+        "networkInterfaces_nic_name": {
+            "defaultValue": "caliber-nic",
+            "type": "String"
+        },
+        "publicIPAddresses_pip_name": {
+            "defaultValue": "caliber-pip",
+            "type": "String"
+        },
+        "virtualNetworks_np_cal_vnet_002_externalid": {
+            "defaultValue": "/subscriptions/8a9a4c1c-ea49-47af-a059-d790e9782847/resourceGroups/np-cal-rg-002/providers/Microsoft.Network/virtualNetworks/np-cal-vnet-002",
+            "type": "String"
+        },
+      "location": {
+      "type": "string",
+      "defaultValue": "eastus"
+      },
+      "adminUsername": {
+          "type": "string",
+          "defaultValue": "calibadmin"
+    },
+      "adminPassword": {
+         "type": "securestring",
+         "defaultValue": "Welcome555"
+    }
+    
+    
+    },
+
+
+
+    "variables": {},
+
+
+    "resources": [
+       
+        {
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2019-12-01",
+            "name": "[parameters('publicIPAddresses_pip_name')]",
+            "location": "[parameters('location')]",
+            "sku": {
+                "name": "Basic"
+            },
+            "properties": {
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Static",
+                "idleTimeoutInMinutes": 4,
+                "ipTags": []
+            }
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2019-07-01",
+            "name": "[parameters('virtualMachines_name')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic_name'))]"
+            ],
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_DS2_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftVisualStudio",
+                        "offer": "VisualStudio",
+                        "sku": "VS-2017-Comm-WS2016",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "name": "[concat(parameters('virtualMachines_name'), '_OsDisk')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "writeAcceleratorEnabled": false,
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS"
+                        },
+                        "diskSizeGB": 128
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "azure-hack-2020",
+                     "adminUsername": "[parameters('adminUsername')]",
+                     "adminPassword": "[parameters('adminPassword')]",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    },
+                   
+                    "allowExtensionOperations": true
+                    
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic_name'))]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "https://npcalsa001.blob.core.windows.net/"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "apiVersion": "2019-07-01",
+            "name": "[concat(parameters('virtualMachines_name'), '/BGInfo')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_name'))]"
+            ],
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "publisher": "Microsoft.Compute",
+                "type": "BGInfo",
+                "typeHandlerVersion": "2.1"
+            }
+        
+        },
+        {
+            "type": "Microsoft.Network/networkInterfaces",
+            "apiVersion": "2019-12-01",
+            "name": "[parameters('networkInterfaces_nic_name')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_pip_name'))]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAddress": "10.0.0.20",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_pip_name'))]"
+                            },
+                            "subnet": {
+                                "id": "[concat(parameters('virtualNetworks_np_cal_vnet_002_externalid'), '/subnets/np-cal-snet-002')]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": []
+                },
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false
+            }
+        }
+    ]
+}

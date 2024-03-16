@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "rgName": {
+            "type": "array",
+            "defaultvalue": [
+                "kamtest10",
+                "kamtest20"
+            ]
+        },
+        "rgLocation": {
+            "type": "string",
+            "defaultvalue": "eastus"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "[parameters('rgname')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                "uri": "https://npcalsa001.blob.core.windows.net/np-cal-ctn-001/caliber.json",
+                "contentVersion": "1.0.0.0"
+            },
+            "copy": {
+            "name": "rgcopy",
+            "count": "[length(parameters('rgname'))]"
+            }
+        }
+        }  
+ 
+    ],
+    "outputs": {}
+}

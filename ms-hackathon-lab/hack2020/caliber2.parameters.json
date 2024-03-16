@@ -1,0 +1,38 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+	    
+		"virtualMachines_name": {
+		  "Value": "test"
+		  
+		},
+		"networkInterfaces_nic_name": {
+		  "Value": "testnic"
+		},
+		"publicIPAddresses_pip_name": {
+		  "Value": "testpip"
+		},
+		"virtualNetworks_np_cal_vnet_002_externalid": {
+		  "Value": "/subscriptions/8a9a4c1c-ea49-47af-a059-d790e9782847/resourceGroups/np-cal-rg-002/providers/Microsoft.Network/virtualNetworks/np-cal-vnet-002"
+		},
+		"location": {
+		  "Value": "eastus"
+		},
+		"adminUsername": {
+		  "Value": "calibadmin"
+		},
+		"adminpassword": {
+			"reference": {
+				"keyVault": {
+					"id": "/subscriptions/8a9a4c1c-ea49-47af-a059-d790e9782847/resourceGroups/calibereastus/providers/Microsoft.KeyVault/vaults/caliber2kv"
+					},
+				"secretName": "vmadmin"
+				}
+			}
+		},
+		"OsDisk_name": {
+		  "Value": "testos"
+		}
+  
+}

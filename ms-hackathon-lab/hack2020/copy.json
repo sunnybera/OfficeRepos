@@ -1,0 +1,38 @@
+﻿{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "RGCount": {
+      "type": "int",
+      "defaultValue": 3
+    }
+  },
+  "variables": {
+    "RGName": "[concat('CalibRG', uniqueString(resourceGroup().id))]",
+    "copy": [
+      {
+        "name": "RGCopy",
+        "input": "[concat(variables('RGName'), copyIndex('RGCopy', 1))]",
+        "count": "[parameters('RGCount')]"
+      }
+    ]
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Resources/resourceGroups",
+      "apiVersion": "2018-05-01",
+      "location": "[resourceGroup().location]",
+      "name": "[variables('RGName')]",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://npcalsa001.blob.core.windows.net/np-cal-ctn-001/caliber.json",
+          "contentVersion": "1.0.0.0"
+        }
+       }
+    }
+
+  ],
+  "outputs": {},
+  "functions": []
+} 

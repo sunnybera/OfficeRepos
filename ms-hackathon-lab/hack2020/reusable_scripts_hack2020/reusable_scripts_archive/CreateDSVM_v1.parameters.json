@@ -1,0 +1,68 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+
+    "virtualMachines_name": {
+      "Value": "[concat('VM-', resourceGroup().name)]",
+      "value": "dsvm"
+    },
+    "networkInterfaces_nic_name": {
+      "Value": "[concat('NIC-', resourceGroup().name)]",
+      "value": "dsvm_nic"
+    },
+    "publicIPAddresses_pip_name": {
+      "Value": "[concat('PIP-', resourceGroup().name)]",
+      "value": "dsvm_pip"
+    },
+    "virtualNetworks_vnet_name": {
+      "Value": "/subscriptions/5ab66322-398c-4751-b098-225402bdf7a3/resourceGroups/np-dln-rg-001/providers/Microsoft.Network/virtualNetworks/Sunbox-vnet",
+      "value": "/subscriptions/5ab66322-398c-4751-b098-225402bdf7a3/resourceGroups/np-dln-rg-001/providers/Microsoft.Network/virtualNetworks/Sunbox-vnet"
+    },
+    "location": {
+      "Value": "South Central US",
+      "value": "South Central US"
+    },
+    "adminUsername": {
+      "Value": "calibadmin",
+      "value": "calibadmin"
+    },
+    "adminpassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/5ab66322-398c-4751-b098-225402bdf7a3/resourceGroups/np-dls-rg-001/providers/Microsoft.KeyVault/vaults/npscusvlt001"
+        },
+        "secretName": "vmadmin"
+      }
+    },
+    "OsDisk_name": {
+      "Value": "[concat('OSDisk-', resourceGroup().name)]",
+      "value": "dsvm_osdisk"
+    },
+    "artifacts": {
+      "value": {
+        "storageName": "aznpdlssta001",
+        "containerName": "np-scus-ctn-001",
+        "WindowsCustomScriptMain": "002.2_VmCustScriptExtention_V1.ps1",
+        "isBackupSimple": "$False",
+        "filePaths": [
+          "https://aznpdlssta001.blob.core.windows.net/np-scus-ctn-001/002.2_VmCustScriptExtention_V1.ps1"
+        ]
+      }
+    },
+    "tags": {
+      "value": {
+        "applicationId": "",
+        "MaintenanceWindow": "",
+        "backupTag": "",
+        "businessUnit": "",
+        "costCentreCode": "",
+        "environment": "Dev",
+        "functionality": "",
+        "monitoring": "",
+        "owner": "",
+        "schedule": ""
+      }
+    }
+  }
+} 

@@ -1,0 +1,30 @@
+{
+    //"Origin Name": "Contributor",
+    //"Origin Id": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+    "Name": "Calib_Contributor",
+    "IsCustom": true,
+    "Description": "Lets you manage everything except management access to resources, Create,update,delete a new/existing virtual machine",
+    "Actions": [
+        "*"
+    ],
+    "NotActions": [
+        "Microsoft.Authorization/*/Delete",
+        "Microsoft.Blueprint/blueprintAssignments/write",
+        "Microsoft.Blueprint/blueprintAssignments/delete",
+        "Microsoft.Compute/virtualMachines/write",
+        "Microsoft.Compute/virtualMachines/delete",
+        "Microsoft.Resources/subscriptions/resourceGroups/delete",
+        "Microsoft.AzureActiveDirectory/register/action",
+        "Microsoft.AzureActiveDirectory/b2cDirectories/read",
+        "Microsoft.AzureActiveDirectory/b2cDirectories/write",
+        "Microsoft.AzureActiveDirectory/b2cDirectories/delete",
+        "Microsoft.AzureActiveDirectory/b2ctenants/read"
+    ],
+    "DataActions": [],
+    "NotDataActions": [],
+    "AssignableScopes": [
+        "/subscriptions/21136a83-6993-4d29-acd9-3e4d72309126"
+        //        "/subscriptions/{subscriptionId2}",
+        //        "/subscriptions/{subscriptionId3}"
+    ]
+}

@@ -1,0 +1,140 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "VMsConfig": {
+      "type": "Array"
+    },
+    "virtualNetworkName": {
+      "type": "String"
+    },
+    "NetworkRG": {
+      "defaultValue": "",
+      "type": "String"
+    },
+    "adminPassword": {
+      "type": "SecureString"
+    },
+    "adminUsername": {
+      "type": "SecureString"
+    },
+    "storageRG": {
+      "type": "string"
+    },
+    "diagstorageAccountName": {
+      "type": "string"
+    }
+  },
+  "variables": {
+    "vnetID": "[resourceId(parameters('NetworkRG'),'Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
+    "storageref": "[resourceId(parameters('storageRG'),'Microsoft.Storage/storageAccounts',parameters('diagstorageAccountName'))]",
+    "nicSuffix": "-nic",
+    "diagnosticsExtensionName": "LinuxDiagnostic"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/networkInterfaces",
+      "apiVersion": "2016-09-01",
+      "name": "[concat(parameters('VMsConfig')[copyindex()].virtualMachineName,variables('nicSuffix'))]",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [],
+      "properties": {
+        "enableAcceleratedNetworking": "[parameters('VMsConfig')[copyindex()].enableAcceleratedNetworking]",
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "subnet": {
+                "id": "[concat(variables('vnetID'),'/subnets/',parameters('VMsConfig')[copyindex()].subnetName)]"
+              },
+              "privateIPAllocationMethod": "[parameters('VMsConfig')[copyindex()].privateIPAddressType]",
+              "privateIPAddress": "[parameters('VMsConfig')[copyindex()].privateIpAddress]"
+            }
+          }
+        ]
+      },
+      "copy": {
+        "name": "privateNicLoop",
+        "count": "[length(parameters('VMsConfig'))]"
+      },
+      "condition": "[equals(parameters('VMsConfig')[copyindex()].isPublic, 0)]"
+    },
+    {
+      "type": "Microsoft.Compute/virtualMachines",
+      "apiVersion": "2016-04-30-preview",
+      "name": "[parameters('VMsConfig')[copyindex()].virtualMachineName]",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [
+        "privateNicLoop"
+      ],
+      "properties": {
+        "osProfile": {
+          "computerName": "[parameters('VMsConfig')[copyindex()].virtualMachineName]",
+          "adminUsername": "[parameters('adminUsername')]",
+          "adminPassword": "[parameters('adminPassword')]"
+
+        },
+        "hardwareProfile": {
+          "vmSize": "[parameters('VMsConfig')[copyindex()].virtualMachineSize]"
+        },
+        "storageProfile": {
+          // "imageReference": {
+          //   "id": "[concat(subscription().id,'/resourceGroups/',parameters('VMsConfig')[copyindex()].ImageResourceGroup,'/providers/Microsoft.Compute/images/',parameters('VMsConfig')[copyindex()].ImageName)]"
+          // },
+          "imageReference": {
+            "publisher": "[parameters('VMsConfig')[copyindex()].publisher]",
+            "offer": "[parameters('VMsConfig')[copyindex()].offer]",
+            "sku": "[parameters('VMsConfig')[copyindex()].sku]",
+            "version": "[parameters('VMsConfig')[copyindex()].version]"
+          },
+          "osDisk": {
+            "name": "[concat(parameters('VMsConfig')[copyindex()].virtualMachineName,'-OSDisk')]",
+            "createOption": "FromImage",
+            "managedDisk": {
+              "storageAccountType": "[parameters('VMsConfig')[copyindex()].diskType]"
+            }
+          },
+          "copy": [
+            {
+              "name": "dataDisks",
+              "count": "[parameters('VMsConfig')[copyindex()].dataDisksCount]",
+              "input": {
+                "name": "[concat(parameters('VMsConfig')[copyindex()].virtualMachineName,'-DataDisk',copyIndex('dataDisks'))]",
+                "diskSizeGB": "[parameters('VMsConfig')[copyindex()].dataDiskSizeLst [copyIndex('dataDisks')]]",
+                "lun": "[copyIndex('dataDisks')]",
+                "createOption": "Empty",
+                "caching": "None",
+                "managedDisk": {
+                  "storageAccountType": "[parameters('VMsConfig')[copyindex()].diskType]"
+                }
+              }
+            }
+          ]
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(parameters('VMsConfig')[copyindex()].virtualMachineName, variables('nicSuffix')))]"
+            }
+          ]
+        },
+        "diagnosticsProfile": {
+          "bootDiagnostics": {
+            "enabled": true,
+            "storageUri": "[concat('https://', parameters('diagstorageAccountName'), '.blob.core.windows.net/')]"
+          }
+        }
+      },
+      "copy": {
+        "name": "VMLoop",
+        "count": "[length(parameters('VMsConfig'))]"
+      },
+      "plan": {
+        "name": "ubuntu_1604_edgeruntimeonly",
+        "publisher": "microsoft_iot_edge",
+        "product": "iot_edge_vm_ubuntu"
+      }
+    }
+  ],
+  "outputs": {}
+}

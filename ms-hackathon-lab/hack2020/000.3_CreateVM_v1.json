@@ -1,0 +1,192 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    "virtualMachines_name": {
+      "type": "String"
+    },
+    "networkInterfaces_nic_name": {
+      "type": "String"
+    },
+    "publicIPAddresses_pip_name": {
+      "type": "String"
+    },
+    "virtualNetworks_np_cal_vnet_002_externalid": {
+      "type": "String"
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "eastus"
+    },
+    "adminUsername": {
+      "type": "string"
+    },
+    "adminPassword": {
+      "type": "securestring"
+    },
+    "OsDisk_name": {
+      "type": "String"
+    },
+    "artifacts": {
+      "type": "object"
+    },
+    "tags": {
+      "type": "object"
+    }
+  },
+    
+    "variables": {},
+
+
+    "resources": [
+       
+        {
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2019-12-01",
+            "name": "[parameters('publicIPAddresses_pip_name')]",
+            "location": "[parameters('location')]",
+            "sku": {
+                "name": "Basic"
+            },
+            "properties": {
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Static",
+                "idleTimeoutInMinutes": 4,
+                "ipTags": []
+            }
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2019-07-01",
+            "name": "[parameters('virtualMachines_name')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic_name'))]"
+            ],
+            "properties": {
+              "hardwareProfile": {
+                "vmSize": "Standard_D2s_v3"
+              },
+                "storageProfile": {
+                  "imageReference": {
+                    "publisher": "MicrosoftWindowsServer",
+                    "offer": "WindowsServer",
+                    "sku": "2019-Datacenter-with-Containers",
+                    "version": "latest"
+                  },
+                  "osDisk": {
+                    "osType": "Windows",
+                    "name": "[parameters('OsDisk_name')]",
+                    "createOption": "FromImage",
+                    "caching": "ReadWrite",
+                    "writeAcceleratorEnabled": false,
+                    "managedDisk": {
+                      "storageAccountType": "Standard_LRS"
+                    },
+                    "diskSizeGB": 32
+                  },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "azure-hack-2020",
+                     "adminUsername": "[parameters('adminUsername')]",
+                     "adminPassword": "[parameters('adminPassword')]",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    },
+                   
+                    "allowExtensionOperations": true
+                    
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_nic_name'))]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "https://npcalsa001.blob.core.windows.net/"
+                    }
+                }
+            }
+        },
+      {
+        "type": "Microsoft.Compute/virtualMachines/extensions",
+        "apiVersion": "2019-07-01",
+        "name": "[concat(parameters('virtualMachines_name'), '/WindowsAgents')]",
+        "location": "[parameters('location')]",
+        "dependsOn": [
+          "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_name'))]"
+        ],
+        "properties": {
+          "publisher": "Microsoft.Compute",
+          "type": "CustomScriptExtension",
+          "autoUpgradeMinorVersion": true,
+          "typeHandlerVersion": "2.1",
+          "settings": {
+            "fileUris": "[parameters('artifacts').filePaths]"
+          }
+        }
+      },
+       {
+        "type": "Microsoft.Network/networkInterfaces",
+        "apiVersion": "2019-12-01",
+        "name": "[parameters('networkInterfaces_nic_name')]",
+        "location": "[parameters('location')]",
+        "dependsOn": [
+          "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_pip_name'))]"
+        ],
+        "properties": {
+          "ipConfigurations": [
+            {
+              "name": "ipconfig1",
+              "properties": {
+                "privateIPAddress": "10.0.0.20",
+                "privateIPAllocationMethod": "Dynamic",
+                "publicIPAddress": {
+                  "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_pip_name'))]"
+                },
+                "subnet": {
+                  "id": "[concat(parameters('virtualNetworks_np_cal_vnet_002_externalid'), '/subnets/np-cal-snet-002')]"
+                },
+                "primary": true,
+                "privateIPAddressVersion": "IPv4"
+              }
+            }
+          ],
+          "dnsSettings": {
+            "dnsServers": []
+          },
+          "enableAcceleratedNetworking": false,
+          "enableIPForwarding": false
+        }
+      },
+      {
+        "apiVersion": "2018-09-15",
+        "type": "microsoft.devtestlab/schedules",
+        "name": "[concat('shutdown-computevm-',parameters('virtualMachines_name'))]",
+        "location": "[parameters('location')]",
+        "dependsOn": [
+          "[concat('Microsoft.Compute/virtualMachines/',concat(parameters('virtualMachines_name')))]"
+        ],
+        "properties": {
+          "status": "Enabled",
+          "taskType": "ComputeVmShutdownTask",
+          "dailyRecurrence": {
+            "time": "2300"
+          },
+          "timeZoneId": "India Standard Time",
+          "notificationSettings": {
+            "status": "Disabled",
+            "timeInMinutes": 15
+          },
+          "targetResourceId": "[resourceId('Microsoft.Compute/virtualMachines',concat(parameters('virtualMachines_name')))]"
+        }
+        
+      }
+    ]
+}

@@ -1,0 +1,34 @@
+﻿{
+  "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "rgNamePrefix": {
+      "type": "string",
+      "defaultValue": "CalibRG"
+    },
+    "rgLocation": {
+      "type": "string",
+      "defaultValue": "eastus"
+    },
+    "instanceCount": {
+      "type": "int",
+      "defaultValue": 3
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Resources/resourceGroups",
+      "apiVersion": "2018-05-01",
+      "location": "[parameters('rgLocation')]",
+      "name": "[concat(parameters('rgNamePrefix'), copyIndex())]",
+      "copy": {
+        "name": "rgCopy",
+        "count": "[parameters('instanceCount')]"
+      },
+      "properties": {}
+    }
+  ],
+  "outputs": {},
+  "functions": []
+} 
