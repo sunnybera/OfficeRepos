@@ -1,0 +1,2 @@
+NSGName, RGName, Location, Name, Description, Protocol, SourcePortRange, DestinationPortRange, SourceAddressPrefix, DestinationAddressPrefix, Access, Priority, Direction
+sap-App-nsg,Sunbox,EastUS2,ruleAllowTelNet,Allow TelNet Ports,*,*,21,*,*,Allow,1145,Inbound
