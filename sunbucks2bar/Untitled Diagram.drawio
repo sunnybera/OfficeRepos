@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-07T07:09:44.885Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="ZYaBlAxZq79mEb0SyW3a" version="24.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-07T07:35:25.852Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="rFiKke5VzwcmnsxL4k7g" version="24.0.8" type="github">
   <diagram name="Page-1" id="vvLUcb4F7CBcmmoqYdkL">
     <mxGraphModel dx="1661" dy="549" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -183,9 +183,9 @@
             <mxGeometry x="1488" y="492" width="24" height="4" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:12.7px;font-family:Segoe UI;color:#000000;direction:ltr;letter-spacing:0px;line-height:120%;opacity:1&quot;&gt;Content Manager&lt;/font&gt;&lt;/div&gt;" tags="Background" id="XnFPROKXoH1gGCMWoloH-106">
+        <UserObject label="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:12.7px;font-family:Segoe UI;color:#000000;direction:ltr;letter-spacing:0px;line-height:120%;opacity:1&quot;&gt;Content Manager + Processing&lt;/font&gt;&lt;/div&gt;" tags="Background" id="XnFPROKXoH1gGCMWoloH-106">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3237;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="1195.5" y="593" width="62" height="32" as="geometry" />
+            <mxGeometry x="1169.75" y="592" width="110.5" height="32" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="" tags="Background" id="XnFPROKXoH1gGCMWoloH-107">
@@ -727,11 +727,11 @@
           </mxCell>
         </UserObject>
         <UserObject label="" tags="Background" id="XnFPROKXoH1gGCMWoloH-385">
-          <mxCell style="vsdxID=3692;edgeStyle=none;startArrow=none;endArrow=block;startSize=5;endSize=5;spacingTop=0;spacingBottom=0;spacingLeft=0;spacingRight=0;verticalAlign=middle;html=1;labelBackgroundColor=#ffffff;rounded=0;entryX=0.997;entryY=0.785;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="XnFPROKXoH1gGCMWoloH-504" edge="1">
+          <mxCell style="vsdxID=3692;edgeStyle=none;startArrow=none;endArrow=block;startSize=5;endSize=5;spacingTop=0;spacingBottom=0;spacingLeft=0;spacingRight=0;verticalAlign=middle;html=1;labelBackgroundColor=#ffffff;rounded=0;" parent="1" edge="1">
             <mxGeometry relative="1" as="geometry">
               <Array as="points" />
               <mxPoint x="1404" y="544" as="sourcePoint" />
-              <mxPoint x="1339" y="541" as="targetPoint" />
+              <mxPoint x="1341" y="544" as="targetPoint" />
             </mxGeometry>
           </mxCell>
         </UserObject>
@@ -940,18 +940,18 @@
         </UserObject>
         <mxCell id="XnFPROKXoH1gGCMWoloH-510" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=none;" parent="1" source="XnFPROKXoH1gGCMWoloH-486" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1178.7142857142858" y="405.28571428571433" as="targetPoint" />
+            <mxPoint x="1179" y="460" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="XnFPROKXoH1gGCMWoloH-486" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1199" y="332" width="53" height="53" as="geometry" />
+          <mxGeometry x="1199" y="326" width="53" height="53" as="geometry" />
         </mxCell>
         <mxCell id="XnFPROKXoH1gGCMWoloH-487" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Plans.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" parent="1" vertex="1">
           <mxGeometry x="1127" y="287" width="51" height="51" as="geometry" />
         </mxCell>
         <mxCell id="XnFPROKXoH1gGCMWoloH-508" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=none;" parent="1" source="XnFPROKXoH1gGCMWoloH-489" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1178" y="401" as="targetPoint" />
+            <mxPoint x="1178" y="454" as="targetPoint" />
             <Array as="points">
               <mxPoint x="1178" y="563" />
             </Array>
@@ -970,7 +970,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="XnFPROKXoH1gGCMWoloH-490" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1202" y="430" width="51" height="51" as="geometry" />
+          <mxGeometry x="1201" y="429.5" width="51" height="51" as="geometry" />
         </mxCell>
         <UserObject label="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:12.7px;font-family:Segoe UI;color:#000000;direction:ltr;letter-spacing:0px;line-height:120%;opacity:1&quot;&gt;App&lt;br/&gt;Gateway &lt;br/&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="XnFPROKXoH1gGCMWoloH-492">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3237;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
@@ -982,9 +982,9 @@
             <mxGeometry x="1199.5" y="491" width="62" height="32" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="Processing" tags="Background" id="XnFPROKXoH1gGCMWoloH-494">
+        <UserObject label="Identity" tags="Background" id="XnFPROKXoH1gGCMWoloH-494">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3237;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="1194" y="390" width="62" height="32" as="geometry" />
+            <mxGeometry x="1194" y="384" width="62" height="32" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:12.7px;font-family:Segoe UI;color:#000000;direction:ltr;letter-spacing:0px;line-height:120%;opacity:1&quot;&gt;Private IP&lt;/font&gt;&lt;/div&gt;" tags="Background" id="XnFPROKXoH1gGCMWoloH-503">
@@ -1117,15 +1117,6 @@
             <mxPoint x="854" y="419" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XnFPROKXoH1gGCMWoloH-562" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.51;entryY=1.002;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=none;" parent="1" target="XnFPROKXoH1gGCMWoloH-504" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="261" y="641" as="sourcePoint" />
-            <Array as="points">
-              <mxPoint x="261" y="694" />
-              <mxPoint x="1230" y="694" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="XnFPROKXoH1gGCMWoloH-563" value="" style="shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.portal_admin;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=none;" parent="1" vertex="1">
           <mxGeometry x="849" y="409" width="44.4" height="48.8" as="geometry" />
         </mxCell>
@@ -1136,7 +1127,29 @@
           <mxGeometry x="223" y="539.2" width="57.2" height="52.8" as="geometry" />
         </mxCell>
         <mxCell id="cKKSSLTkVTfvcFnxpY_C-1" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
-          <mxGeometry x="1197.5" y="630" width="51" height="51" as="geometry" />
+          <mxGeometry x="1197.5" y="630" width="51.5" height="51.5" as="geometry" />
+        </mxCell>
+        <mxCell id="cKKSSLTkVTfvcFnxpY_C-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.51;entryY=1.002;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=none;" edge="1" parent="1" target="cKKSSLTkVTfvcFnxpY_C-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="261" y="641" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="258" y="642" />
+              <mxPoint x="258" y="734" />
+              <mxPoint x="1176" y="734" />
+            </Array>
+            <mxPoint x="1230" y="718" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:12.7px;font-family:Segoe UI;color:#000000;direction:ltr;letter-spacing:0px;line-height:120%;opacity:1&quot;&gt;Content Delivery&lt;/font&gt;&lt;/div&gt;" tags="Background" id="cKKSSLTkVTfvcFnxpY_C-2">
+          <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3237;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+            <mxGeometry x="1144" y="681.5" width="62" height="32" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="cKKSSLTkVTfvcFnxpY_C-4" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1207.5" y="640" width="51.5" height="51.5" as="geometry" />
+        </mxCell>
+        <mxCell id="cKKSSLTkVTfvcFnxpY_C-5" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1217.5" y="650" width="51.5" height="51.5" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
