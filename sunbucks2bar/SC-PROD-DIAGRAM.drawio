@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-09-20T08:03:39.160Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" etag="2HFLKkCvcxQBVLDJSxLE" scale="1" border="0" version="24.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-09-20T08:27:30.039Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" etag="7PwNihfbPsijht9KUa3M" scale="1" border="0" version="24.4.4" type="github">
   <diagram name="Page-1" id="vvLUcb4F7CBcmmoqYdkL">
     <mxGraphModel dx="2036" dy="775" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -68,7 +68,7 @@
         </UserObject>
         <UserObject label="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:12.7px;font-family:Segoe UI;color:#000000;direction:ltr;letter-spacing:0px;line-height:120%;opacity:1&quot;&gt;&lt;i&gt;Azure Cache Redis&amp;nbsp;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="XnFPROKXoH1gGCMWoloH-33">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3110;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="1488" y="419.5" width="94" height="38" as="geometry" />
+            <mxGeometry x="1508" y="509.5" width="94" height="38" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="" tags="Background" id="XnFPROKXoH1gGCMWoloH-50">
@@ -96,9 +96,9 @@
             <mxGeometry x="1488" y="492" width="24" height="4" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;Segoe UI&quot;&gt;&lt;span style=&quot;font-size: 12.7px;&quot;&gt;CM +&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; font-size: 12.7px; letter-spacing: 0px; background-color: initial;&quot;&gt;PROC App&lt;/span&gt;&lt;/div&gt;" tags="Background" id="XnFPROKXoH1gGCMWoloH-106">
+        <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;font face=&quot;Segoe UI&quot;&gt;&lt;span style=&quot;font-size: 12.7px;&quot;&gt;CM&amp;nbsp; &amp;amp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; font-size: 12.7px; letter-spacing: 0px; background-color: initial;&quot;&gt;PRC App&lt;/span&gt;&lt;/div&gt;" tags="Background" id="XnFPROKXoH1gGCMWoloH-106">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3237;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="1215" y="345.75" width="98" height="43.25" as="geometry" />
+            <mxGeometry x="1215" y="345.75" width="109" height="43.25" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="" tags="Background" id="XnFPROKXoH1gGCMWoloH-107">
@@ -348,7 +348,7 @@
           <mxGeometry x="1197.5" y="254" width="53" height="53" as="geometry" />
         </mxCell>
         <mxCell id="XnFPROKXoH1gGCMWoloH-487" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Plans.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1261.5" y="273" width="44" height="44" as="geometry" />
+          <mxGeometry x="1391.5" y="143" width="44" height="44" as="geometry" />
         </mxCell>
         <mxCell id="XnFPROKXoH1gGCMWoloH-489" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" parent="1" vertex="1">
           <mxGeometry x="1198.5" y="384" width="51" height="51" as="geometry" />
@@ -363,12 +363,12 @@
         </UserObject>
         <UserObject label="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:12.7px;font-family:Segoe UI;color:#000000;direction:ltr;letter-spacing:0px;line-height:120%;opacity:1&quot;&gt;XC App&lt;/font&gt;&lt;/div&gt;" tags="Background" id="XnFPROKXoH1gGCMWoloH-493">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3237;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="1156" y="507.75" width="62" height="32" as="geometry" />
+            <mxGeometry x="1249.5" y="459" width="62" height="32" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="SI App&amp;nbsp;" tags="Background" id="XnFPROKXoH1gGCMWoloH-494">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3237;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="1153" y="295" width="62" height="32" as="geometry" />
+            <mxGeometry x="1191.5" y="219" width="62" height="32" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:12.7px;font-family:Segoe UI;color:#000000;direction:ltr;letter-spacing:0px;line-height:120%;opacity:1&quot;&gt;Private IP&lt;/font&gt;&lt;/div&gt;" tags="Background" id="XnFPROKXoH1gGCMWoloH-503">
@@ -484,7 +484,7 @@
         </UserObject>
         <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Secondary SQL DB Read Replica&lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="uNYKRaKK0V0i51EXmtUj-40">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3137;fillColor=none;gradientColor=none;strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[[0.5,2.39,0],[0.5,0,0],[0,0.5,0],[1,0.5,0]];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="922" y="962.67" width="114" height="42" as="geometry" />
+            <mxGeometry x="972" y="1002.67" width="114" height="42" as="geometry" />
           </mxCell>
         </UserObject>
         <mxCell id="uNYKRaKK0V0i51EXmtUj-41" value="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Azure Active Directory&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="text;vsdxID=4101;fillColor=none;gradientColor=none;strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;verticalAlign=middle;align=center;overflow=width;;html=1;" parent="1" vertex="1">
@@ -501,9 +501,9 @@
         <mxCell id="uNYKRaKK0V0i51EXmtUj-44" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" parent="1" vertex="1">
           <mxGeometry x="595.47" y="928" width="38.53" height="23" as="geometry" />
         </mxCell>
-        <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;CD APP &lt;br&gt;(NA)&amp;nbsp;&lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="uNYKRaKK0V0i51EXmtUj-54">
+        <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Active CD APP &lt;br&gt;(NCUS)&amp;nbsp;&lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="uNYKRaKK0V0i51EXmtUj-54">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3137;fillColor=none;gradientColor=none;strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[[0.5,2.39,0],[0.5,0,0],[0,0.5,0],[1,0.5,0]];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="1360" y="820.3" width="75" height="42" as="geometry" />
+            <mxGeometry x="1380" y="806" width="95" height="56.3" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Geo-Replicated SQL DB Read Replica&lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="uNYKRaKK0V0i51EXmtUj-56">
@@ -530,9 +530,9 @@
             <mxGeometry x="241.51" y="979" width="127.5" height="49" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;North&amp;nbsp; America Region&lt;/font&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;i style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; letter-spacing: 0px; background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;(Geo Replicated Zone)&lt;/b&gt;&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="uNYKRaKK0V0i51EXmtUj-81">
+        <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;North&amp;nbsp; Central US Region&lt;/font&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;i style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; letter-spacing: 0px; background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;(Geo Replicated Zone)&lt;/b&gt;&lt;/font&gt;&lt;/i&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="uNYKRaKK0V0i51EXmtUj-81">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3484;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="1364" y="903.45" width="173" height="54.55" as="geometry" />
+            <mxGeometry x="1364" y="863.45" width="173" height="54.55" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="" tags="Background" id="uNYKRaKK0V0i51EXmtUj-82">
@@ -604,14 +604,14 @@
             <mxGeometry x="247" y="620.5" width="33" height="33" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;CD APP (NE)&lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="xy8IVkus4yZS2pbvja8z-58">
+        <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Active CD APP (NE)&lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="xy8IVkus4yZS2pbvja8z-58">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3137;fillColor=none;gradientColor=none;strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[[0.5,2.39,0],[0.5,0,0],[0,0.5,0],[1,0.5,0]];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="1106" y="816" width="75" height="42" as="geometry" />
+            <mxGeometry x="1106" y="801" width="90" height="57" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;CD APP&amp;nbsp;&lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="xy8IVkus4yZS2pbvja8z-59">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3137;fillColor=none;gradientColor=none;strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[[0.5,2.39,0],[0.5,0,0],[0,0.5,0],[1,0.5,0]];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="1205" y="663" width="75" height="42" as="geometry" />
+            <mxGeometry x="1191.5" y="652.5" width="75" height="42" as="geometry" />
           </mxCell>
         </UserObject>
         <mxCell id="1qYVtrTMXnEOwBI1eYjV-2" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.018;entryY=0.461;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#754103;" parent="1" target="XnFPROKXoH1gGCMWoloH-512" edge="1">
@@ -770,20 +770,14 @@
         <mxCell id="1qYVtrTMXnEOwBI1eYjV-80" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" parent="1" vertex="1">
           <mxGeometry x="828" y="820.82" width="54.25" height="54.25" as="geometry" />
         </mxCell>
-        <UserObject label="&lt;font style=&quot;&quot; face=&quot;Segoe UI&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;App Restore during&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;i style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Disaster Recovery [SI, CM+PROC, XC]&lt;/font&gt;&lt;/i&gt;" tags="Background" id="1qYVtrTMXnEOwBI1eYjV-89">
+        <UserObject label="&lt;font style=&quot;&quot; face=&quot;Segoe UI&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;10 App Restore during&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;i style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Disaster Scenario&lt;/font&gt;&lt;/i&gt;" tags="Background" id="1qYVtrTMXnEOwBI1eYjV-89">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3137;fillColor=none;gradientColor=none;strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[[0.5,2.39,0],[0.5,0,0],[0,0.5,0],[1,0.5,0]];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="913.25" y="808" width="122.75" height="112" as="geometry" />
+            <mxGeometry x="894.25" y="810" width="122.75" height="112" as="geometry" />
           </mxCell>
         </UserObject>
-        <mxCell id="1qYVtrTMXnEOwBI1eYjV-90" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Plans.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1271.5" y="283" width="44" height="44" as="geometry" />
-        </mxCell>
-        <mxCell id="1qYVtrTMXnEOwBI1eYjV-91" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Plans.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" parent="1" vertex="1">
-          <mxGeometry x="1281.5" y="293" width="44" height="44" as="geometry" />
-        </mxCell>
-        <UserObject label="App Service Plans" tags="Background" id="1qYVtrTMXnEOwBI1eYjV-93">
+        <UserObject label="3 App Service Plans" tags="Background" id="1qYVtrTMXnEOwBI1eYjV-93">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3237;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="1263" y="225" width="72" height="57" as="geometry" />
+            <mxGeometry x="1443" y="135" width="72" height="57" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="" tags="Background" id="1qYVtrTMXnEOwBI1eYjV-95">
@@ -1034,7 +1028,7 @@
         </mxCell>
         <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Bastion subnet&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="9H5e6qXgLgt6FbI8W9xy-22">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3484;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-            <mxGeometry x="634.75" y="643" width="127.5" height="49" as="geometry" />
+            <mxGeometry x="754.75" y="653" width="127.5" height="49" as="geometry" />
           </mxCell>
         </UserObject>
         <mxCell id="9H5e6qXgLgt6FbI8W9xy-23" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/networking/Public_IP_Addresses_Classic.svg;" vertex="1" parent="1">
@@ -1151,9 +1145,86 @@
         </mxCell>
         <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;11 App Services are connected to SQL Server&lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="9H5e6qXgLgt6FbI8W9xy-87">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3424;rotation=0;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-            <mxGeometry x="1373" y="257" width="202" height="79" as="geometry" />
+            <mxGeometry x="1443" y="297" width="202" height="79" as="geometry" />
           </mxCell>
         </UserObject>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-89" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1208.5" y="394" width="51" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-90" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1197.5" y="134" width="53" height="53" as="geometry" />
+        </mxCell>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-93" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1207.5" y="144" width="53" height="53" as="geometry" />
+        </mxCell>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-94" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1217.5" y="154" width="53" height="53" as="geometry" />
+        </mxCell>
+        <UserObject label="11 App Services" tags="Background" id="9H5e6qXgLgt6FbI8W9xy-97">
+          <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3237;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+            <mxGeometry x="1263" y="135" width="72" height="57" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-98" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Plans.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1401.5" y="153" width="44" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-99" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Plans.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1411.5" y="163" width="44" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-100" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Plans.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1331.5" y="803" width="44" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-101" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Plans.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1081.5" y="813" width="44" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-102" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Plans.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="861.5" y="813" width="44" height="44" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:12.7px;font-family:Segoe UI;color:#000000;direction:ltr;letter-spacing:0px;line-height:120%;opacity:1&quot;&gt;&lt;i&gt;SQL elastic pool&amp;nbsp;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="9H5e6qXgLgt6FbI8W9xy-103">
+          <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3110;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+            <mxGeometry x="1518" y="389.5" width="94" height="38" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-104" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/SQL_Elastic_Pools.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="947" y="950.25" width="68" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-105" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/SQL_Database.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="901" y="923" width="60.75" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-106" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/SQL_Elastic_Pools.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1507" y="960.25" width="68" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-107" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/SQL_Database.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1461" y="933" width="60.75" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-108" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=1.007;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1051" y="960" as="sourcePoint" />
+            <mxPoint x="986.6399999999999" y="959.7199999999998" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-109" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=1.007;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.016;exitY=0.393;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="9H5e6qXgLgt6FbI8W9xy-107">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1411" y="960" as="sourcePoint" />
+            <mxPoint x="1346.6399999999999" y="959.7199999999998" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-110" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#754103;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1310" y="411" as="sourcePoint" />
+            <mxPoint x="1253" y="286" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1310" y="286" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-111" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=#754103;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1311" y="489" as="sourcePoint" />
+            <mxPoint x="1244" y="489" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
