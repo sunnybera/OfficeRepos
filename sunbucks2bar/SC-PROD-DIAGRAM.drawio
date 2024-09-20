@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-09-20T06:34:39.861Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" etag="DKwk6K8Id9eIrWGwJYB8" scale="1" border="0" version="24.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-09-20T06:38:13.763Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" etag="e3fpJhTFE5YvNLHWmAab" scale="1" border="0" version="24.4.4" type="github">
   <diagram name="Page-1" id="vvLUcb4F7CBcmmoqYdkL">
     <mxGraphModel dx="2036" dy="775" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -259,7 +259,7 @@
         </UserObject>
         <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Solr Node subnet&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="XnFPROKXoH1gGCMWoloH-222">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=3484;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="906.5" y="175" width="127.5" height="49" as="geometry" />
+            <mxGeometry x="846.5" y="175" width="127.5" height="49" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:12.7px;font-family:Segoe UI;color:#000000;direction:ltr;letter-spacing:0px;line-height:120%;opacity:1&quot;&gt;3 VMs&amp;nbsp; in Availability Zone&amp;nbsp;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="XnFPROKXoH1gGCMWoloH-230">
@@ -395,7 +395,7 @@
           <mxGeometry x="1407" y="495" width="93.54" height="76" as="geometry" />
         </mxCell>
         <mxCell id="XnFPROKXoH1gGCMWoloH-520" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/other/Managed_Instance_Apache_Cassandra.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" parent="1" vertex="1">
-          <mxGeometry x="863.25" y="332" width="70" height="70" as="geometry" />
+          <mxGeometry x="843.25" y="352" width="70" height="70" as="geometry" />
         </mxCell>
         <mxCell id="XnFPROKXoH1gGCMWoloH-526" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks.svg;rounded=0;verticalAlign=middle;fontFamily=Helvetica;fontColor=default;labelBackgroundColor=none;fillColor=#f2f2f2;gradientColor=none;" parent="1" vertex="1">
           <mxGeometry x="540.24" y="93.79999999999995" width="38.53" height="23" as="geometry" />
@@ -580,7 +580,7 @@
           <mxGeometry x="822" y="24" width="44" height="71" as="geometry" />
         </mxCell>
         <mxCell id="xy8IVkus4yZS2pbvja8z-18" value="&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;West Europe Region&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="text;vsdxID=4101;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;verticalAlign=middle;align=center;overflow=width;;html=1;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
-          <mxGeometry x="1074" y="116.67" width="201" height="40.33" as="geometry" />
+          <mxGeometry x="1134" y="73.67" width="201" height="40.33" as="geometry" />
         </mxCell>
         <mxCell id="xy8IVkus4yZS2pbvja8z-34" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;fillColor=#1ba1e2;strokeColor=default;" parent="1" target="XnFPROKXoH1gGCMWoloH-486" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -682,7 +682,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="1qYVtrTMXnEOwBI1eYjV-20" value="" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Load_Balancer_feature.svg;" parent="1" vertex="1">
-          <mxGeometry x="766.5" y="273.5" width="67.5" height="67.5" as="geometry" />
+          <mxGeometry x="766.5" y="256.75" width="67.5" height="67.5" as="geometry" />
         </mxCell>
         <mxCell id="1qYVtrTMXnEOwBI1eYjV-22" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/Azure_SQL.svg;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="1095" y="971" width="64" height="46" as="geometry" />
@@ -853,7 +853,7 @@
         </mxCell>
         <UserObject label="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:12.7px;font-family:Segoe UI;color:#000000;direction:ltr;letter-spacing:0px;line-height:120%;opacity:1&quot;&gt;Apache Zoo Keeper&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" tags="Background" id="1qYVtrTMXnEOwBI1eYjV-109">
           <mxCell style="verticalAlign=middle;align=center;overflow=width;vsdxID=4146;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;points=[];labelBackgroundColor=#ffffff;rounded=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-            <mxGeometry x="824.5" y="409.5" width="150.5" height="18" as="geometry" />
+            <mxGeometry x="804.5" y="429.5" width="150.5" height="18" as="geometry" />
           </mxCell>
         </UserObject>
         <mxCell id="1qYVtrTMXnEOwBI1eYjV-106" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.035;entryY=0.184;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="uNYKRaKK0V0i51EXmtUj-11" edge="1" target="xy8IVkus4yZS2pbvja8z-19">
@@ -939,13 +939,13 @@
           <mxGeometry x="-2.75" width="184.75" height="533.46" as="geometry" />
         </mxCell>
         <mxCell id="pn-c_7e-rpN-7UYExbxR-11" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/networking/Web_Application_Firewall_Policies_WAF.svg;" parent="XnFPROKXoH1gGCMWoloH-326" vertex="1">
-          <mxGeometry x="83.57846153846154" y="155" width="51.42016483516483" height="88.30478021978023" as="geometry" />
+          <mxGeometry x="83.58" y="180" width="62.22" height="83.3" as="geometry" />
         </mxCell>
         <mxCell id="pn-c_7e-rpN-7UYExbxR-12" value="&lt;div style=&quot;&quot;&gt;&lt;p style=&quot;text-align: center; margin: 0px; text-indent: 0px; vertical-align: middle; direction: ltr;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 100%; opacity: 1; font-size: 14px;&quot;&gt;&lt;i style=&quot;&quot;&gt;WAF Policies&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;&lt;/div&gt;" style="verticalAlign=middle;align=center;overflow=width;vsdxID=4095;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="XnFPROKXoH1gGCMWoloH-326" vertex="1">
           <mxGeometry x="74.3822027874912" y="67.00400548696841" width="80.28585007561026" height="57.15637860082304" as="geometry" />
         </mxCell>
         <mxCell id="uNYKRaKK0V0i51EXmtUj-9" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/networking/Application_Gateways.svg;" parent="XnFPROKXoH1gGCMWoloH-326" vertex="1">
-          <mxGeometry x="42.80527472527473" y="174" width="52.69230769230769" height="52.69230769230769" as="geometry" />
+          <mxGeometry x="28" y="177" width="97.84" height="82.12" as="geometry" />
         </mxCell>
         <mxCell id="XnFPROKXoH1gGCMWoloH-328" value="&lt;div style=&quot;&quot;&gt;&lt;p style=&quot;text-align: center; margin: 0px; text-indent: 0px; vertical-align: middle; direction: ltr;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 100%; opacity: 1; font-size: 14px;&quot;&gt;&lt;i style=&quot;&quot;&gt;Application Gateway for&amp;nbsp;&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; margin: 0px; text-indent: 0px; vertical-align: middle; direction: ltr;&quot;&gt;&lt;font style=&quot;font-family: &amp;quot;Segoe UI&amp;quot;; color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 100%; opacity: 1; font-size: 14px;&quot;&gt;&lt;i style=&quot;&quot;&gt;CM &amp;amp; CD&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;&lt;/div&gt;" style="verticalAlign=middle;align=center;overflow=width;vsdxID=4095;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" parent="XnFPROKXoH1gGCMWoloH-326" vertex="1">
           <mxGeometry x="29.52909108605803" y="96.97668038408773" width="130.6085979693238" height="83.95971193415637" as="geometry" />
@@ -1071,6 +1071,9 @@
             <mxGeometry x="757" y="553" width="317.63" height="155" as="geometry" />
           </mxCell>
         </UserObject>
+        <mxCell id="9H5e6qXgLgt6FbI8W9xy-20" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="834" y="244" width="63" height="93" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
